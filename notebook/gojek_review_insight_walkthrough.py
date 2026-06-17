@@ -46,9 +46,22 @@ def resolve_project_root() -> Path:
     )
 
 
+def ensure_dependencies(project_root: Path) -> None:
+    """Install project dependencies automatically in Google Colab."""
+    if "google.colab" not in sys.modules:
+        return
+
+    requirements_path = project_root / "requirements.txt"
+    subprocess.run(
+        [sys.executable, "-m", "pip", "install", "-r", str(requirements_path)],
+        check=True,
+    )
+
+
 PROJECT_ROOT = resolve_project_root()
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
+ensure_dependencies(PROJECT_ROOT)
 
 from src.sentiment_pipeline import (  # noqa: E402
     FIGURES_DIR,
