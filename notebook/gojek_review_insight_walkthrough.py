@@ -7,6 +7,7 @@ analysis like a Jupyter notebook while keeping the project logic modular.
 """
 
 from pathlib import Path
+import subprocess
 import sys
 
 import matplotlib.pyplot as plt
@@ -15,9 +16,39 @@ import seaborn as sns
 from IPython.display import Markdown, display
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+def resolve_project_root() -> Path:
+    """Resolve the project root for local notebooks, Jupyter, or Colab."""
+    candidates: list[Path] = []
+
+    if "__file__" in globals():
+        candidates.append(Path(__file__).resolve().parent)
+
+    cwd = Path.cwd().resolve()
+    candidates.extend([cwd, *cwd.parents])
+
+    for candidate in candidates:
+        if (candidate / "src" / "sentiment_pipeline.py").exists():
+            return candidate
+
+    colab_target = Path("/content/Gojek-Review-Insight")
+    if "google.colab" in sys.modules and not colab_target.exists():
+        subprocess.run(
+            ["git", "clone", "https://github.com/muhfajri24/Gojek-Review-Insight.git", str(colab_target)],
+            check=True,
+        )
+
+    if (colab_target / "src" / "sentiment_pipeline.py").exists():
+        return colab_target
+
+    raise FileNotFoundError(
+        "Project root tidak ditemukan. Jalankan notebook dari folder project, "
+        "atau pastikan repo `muhfajri24/Gojek-Review-Insight` tersedia di runtime."
+    )
+
+
+PROJECT_ROOT = resolve_project_root()
 if str(PROJECT_ROOT) not in sys.path:
-    sys.path.append(str(PROJECT_ROOT))
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.sentiment_pipeline import (  # noqa: E402
     FIGURES_DIR,
@@ -184,4 +215,3 @@ show_section("12. Business Insight", "Ringkasan ini bisa langsung dipakai untuk 
 print(build_readme_highlight(result))
 print()
 print((REPORTS_DIR / "business_insights.md").read_text(encoding="utf-8"))
-
