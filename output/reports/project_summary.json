@@ -1,0 +1,33 @@
+{
+  "dataset_file": "data\\raw\\GojekAppReviewV4.0.0-V4.9.3_Cleaned.csv",
+  "best_model": "Naive Bayes",
+  "selection_metric": "f1_score",
+  "metrics": [
+    {
+      "model": "Naive Bayes",
+      "accuracy": 0.8794142980189492,
+      "precision": 0.9371633752244165,
+      "recall": 0.8325358851674641,
+      "f1_score": 0.8817567567567568
+    },
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.8725236864771748,
+      "precision": 0.9179755671902269,
+      "recall": 0.8389154704944178,
+      "f1_score": 0.8766666666666667
+    },
+    {
+      "model": "Random Forest",
+      "accuracy": 0.8561584840654608,
+      "precision": 0.896551724137931,
+      "recall": 0.8293460925039873,
+      "f1_score": 0.8616404308202155
+    }
+  ],
+  "generated_files": {
+    "processed_data": "data\\processed\\gojek_reviews_processed.csv",
+    "metrics_summary": "output\\reports\\metrics_summary.csv",
+    "error_analysis": "output\\reports\\error_analysis_examples.csv"
+  }
+}
