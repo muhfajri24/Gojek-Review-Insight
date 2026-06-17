@@ -1,34 +1,34 @@
 # Gojek Review Insight
 
-Gojek Review Insight adalah project portofolio Data Scientist yang menganalisis ulasan pengguna aplikasi Gojek berbahasa Indonesia untuk memahami sentimen pengguna, menemukan pola keluhan yang paling sering muncul, dan menerjemahkan hasil analisis menjadi insight bisnis yang mudah dipresentasikan.
+Gojek Review Insight is a portfolio-ready data science project that analyzes Indonesian-language Gojek app reviews to understand customer sentiment, surface recurring complaint themes, and translate the findings into presentation-friendly business insights.
 
-Project ini dibuat agar nyaman untuk portfolio GitHub junior Data Scientist: struktur rapi, pipeline modular, notebook walkthrough, perbandingan beberapa model, visualisasi, error analysis, dan aplikasi Streamlit sederhana untuk demo.
+The repository is designed for a clean and professional portfolio presentation: modular pipeline, notebook walkthrough, multi-model comparison, visual reporting, error analysis, and a lightweight Streamlit demo app.
 
 ## Problem Statement
 
-Ulasan pengguna di Google Play atau App Store menyimpan sinyal penting tentang pengalaman pelanggan. Tantangannya, jumlah review yang besar membuat analisis manual tidak efisien. Project ini menjawab tiga pertanyaan utama:
+User reviews on Google Play and the App Store contain valuable signals about customer experience. The challenge is that large review volumes make manual analysis inefficient. This project focuses on three main questions:
 
-1. Bagaimana distribusi sentimen pengguna terhadap aplikasi Gojek?
-2. Keluhan apa yang paling sering muncul pada review negatif?
-3. Model machine learning mana yang paling baik untuk mengklasifikasikan sentimen review berbahasa Indonesia?
+1. What is the sentiment distribution of Gojek app reviews?
+2. Which complaint themes appear most often in negative reviews?
+3. Which machine learning model performs best for classifying Indonesian-language review sentiment?
 
 ## Dataset
 
-Project ini menggunakan referensi dari Kaggle notebook:
+This project is based on the following Kaggle references:
 
 - Notebook: `najwaputrif/sentiment-analysis-review-aplikasi-gojek`
 - Dataset: `ucupsedaya/gojek-app-reviews-bahasa-indonesia`
-- File utama: `GojekAppReviewV4.0.0-V4.9.3_Cleaned.csv`
+- Main file: `GojekAppReviewV4.0.0-V4.9.3_Cleaned.csv`
 
-Penyesuaian yang dipakai di project ini:
+Project-specific adjustments used here:
 
-- Pipeline otomatis mendeteksi kolom review, rating, dan sentiment jika namanya umum seperti `content`, `review`, `ulasan`, `rating`, atau `sentiment`.
-- Jika kolom sentimen belum tersedia, label diinfer dari rating:
+- The pipeline automatically detects review, rating, and sentiment columns when they use common names such as `content`, `review`, `ulasan`, `rating`, or `sentiment`.
+- If a sentiment column is not available, labels are inferred from ratings:
   - `4-5` = `positive`
   - `1-2` = `negative`
   - `3` = `neutral`
-- Agar konsisten dengan notebook referensi, pipeline memfokuskan analisis pada review dengan `appVersion` awalan `4.8` saat kolom itu tersedia.
-- Untuk supervised modeling, kelas `neutral` tidak dipakai pada training agar fokus klasifikasi tetap jelas pada `positive` vs `negative`.
+- To stay aligned with the reference notebook, the pipeline focuses on reviews whose `appVersion` starts with `4.8` when that column is available.
+- For supervised modeling, the `neutral` class is excluded from training so the classifier stays focused on `positive` vs `negative`.
 
 ## Tools
 
@@ -45,32 +45,32 @@ Penyesuaian yang dipakai di project ini:
 
 ## Workflow
 
-1. Load dataset review Gojek dari file CSV.
-2. Lakukan data overview: jumlah data, kolom, missing value, distribusi sentimen, dan contoh review.
-3. Bersihkan teks Bahasa Indonesia dengan lowercase, hapus simbol, angka, emoji, stopword, dan stemming menggunakan Sastrawi.
-4. Ekstraksi fitur teks menggunakan TF-IDF.
-5. Latih dan bandingkan tiga model:
+1. Load the Gojek review dataset from CSV.
+2. Perform a dataset overview: row count, column structure, missing values, sentiment distribution, and example reviews.
+3. Clean Indonesian text with lowercasing, symbol and number removal, emoji cleanup, stopword removal, and Sastrawi stemming.
+4. Extract text features with TF-IDF.
+5. Train and compare three models:
    - Naive Bayes
    - Logistic Regression
    - Random Forest
-6. Evaluasi model menggunakan:
+6. Evaluate model performance using:
    - accuracy
    - precision
    - recall
    - f1-score
    - confusion matrix
-7. Pilih model terbaik berdasarkan `F1-score`.
-8. Tampilkan error analysis untuk review yang salah diprediksi.
-9. Rangkum insight bisnis dan rekomendasi perbaikan aplikasi.
-10. Sajikan demo interaktif lewat Streamlit.
+7. Select the best model based on `F1-score`.
+8. Review error analysis for misclassified examples.
+9. Summarize business insights and application improvement recommendations.
+10. Present the result through a simple Streamlit demo.
 
 ## Final Result
 
-Hasil run terbaru pada dataset Kaggle yang sudah diproses:
+Latest processed-run results from the Kaggle dataset:
 
-- Total review setelah preprocessing: `6,152`
-- Distribusi sentimen: `3,131 positive`, `2,670 negative`, `351 neutral`
-- Model terbaik: `Naive Bayes`
+- Total reviews after preprocessing: `6,152`
+- Sentiment distribution: `3,131 positive`, `2,670 negative`, `351 neutral`
+- Best model: `Naive Bayes`
 - Selection metric: `F1-score`
 
 ### Model Comparison
@@ -81,42 +81,42 @@ Hasil run terbaru pada dataset Kaggle yang sudah diproses:
 | Logistic Regression | 0.8725 | 0.9180 | 0.8389 | 0.8767 |
 | Random Forest | 0.8562 | 0.8966 | 0.8293 | 0.8616 |
 
-Model terbaik dipilih berdasarkan `F1-score`, bukan hanya accuracy.
+The best model is selected by `F1-score`, not by accuracy alone.
 
 ## Main Insights
 
-- Keluhan utama pengguna paling sering berkaitan dengan kata seperti `driver`, `gopay`, `bayar`, `lama`, dan `malah`.
-- Ini mengindikasikan tema utama pada review negatif berada di sekitar pembayaran, stabilitas aplikasi, dan pengalaman layanan yang tidak konsisten.
-- Review positif lebih sering menonjolkan kata seperti `bantu`, `bagus`, `baik`, `mudah`, `mantap`, dan `cepat`.
-- Ini menunjukkan pengguna menghargai kemudahan penggunaan, manfaat aplikasi, dan kualitas layanan saat pengalaman berjalan lancar.
-- Error analysis menunjukkan cukup banyak review yang bersifat campuran, penuh slang, typo, atau konteks kontras seperti “bagus tapi…”.
+- The most common complaint terms include `driver`, `gopay`, `bayar`, `lama`, and `malah`.
+- This suggests that negative reviews cluster around payment friction, application stability, and inconsistent service experiences.
+- Positive reviews more often emphasize terms such as `bantu`, `bagus`, `baik`, `mudah`, `mantap`, and `cepat`.
+- This indicates that users value ease of use, practical utility, and service quality when the product experience runs smoothly.
+- Error analysis shows many difficult cases involve mixed sentiment, slang, typos, or contrastive phrasing such as "good, but...".
 
 ## Project Structure
 
 ```text
 Gojek-Review-Insight/
-├── app/
-├── data/
-│   ├── processed/
-│   └── raw/
-├── notebook/
-│   ├── gojek_review_insight_walkthrough.ipynb
-│   └── gojek_review_insight_walkthrough.py
-├── output/
-│   ├── figures/
-│   ├── models/
-│   └── reports/
-├── src/
-│   ├── __init__.py
-│   └── sentiment_pipeline.py
-├── README.md
-├── requirements.txt
-└── streamlit_app.py
+|-- app/
+|-- data/
+|   |-- processed/
+|   |-- raw/
+|-- notebook/
+|   |-- gojek_review_insight_walkthrough.ipynb
+|   |-- gojek_review_insight_walkthrough.py
+|-- output/
+|   |-- figures/
+|   |-- models/
+|   |-- reports/
+|-- src/
+|   |-- __init__.py
+|   |-- sentiment_pipeline.py
+|-- README.md
+|-- requirements.txt
+|-- streamlit_app.py
 ```
 
 ## Output Files
 
-Setelah pipeline dijalankan, project mengekspor:
+After the pipeline runs, the project exports:
 
 - `data/processed/gojek_reviews_processed.csv`
 - `output/reports/metrics_summary.csv`
@@ -141,20 +141,20 @@ Setelah pipeline dijalankan, project mengekspor:
 pip install -r requirements.txt
 ```
 
-### 2. Pastikan dataset tersedia
+### 2. Make sure the dataset is available
 
-Simpan file CSV di salah satu lokasi berikut:
+Place the CSV file in one of the following locations:
 
 - `data/raw/gojek_reviews.csv`
-- atau biarkan dengan nama asli Kaggle di dalam folder `data/raw/`
+- or keep the original Kaggle filename inside `data/raw/`
 
-### 3. Jalankan pipeline
+### 3. Run the pipeline
 
 ```powershell
 python -m src.sentiment_pipeline
 ```
 
-### 4. Jalankan Streamlit app
+### 4. Launch the Streamlit app
 
 ```powershell
 streamlit run streamlit_app.py
@@ -162,46 +162,46 @@ streamlit run streamlit_app.py
 
 ## Notebook and Colab
 
-Notebook utama tersedia dalam dua format:
+The main walkthrough notebook is available in two formats:
 
 - `notebook/gojek_review_insight_walkthrough.py`
 - `notebook/gojek_review_insight_walkthrough.ipynb`
 
-Notebook sudah diperbaiki agar lebih aman untuk:
+The notebook has been adjusted to work more reliably in:
 
-- VS Code notebook
-- Jupyter lokal
+- VS Code notebooks
+- local Jupyter
 - Google Colab
 
-Jika dijalankan di Colab tanpa struktur project lengkap, notebook akan mencoba clone repo ini:
+If it is executed in Colab without the full project structure, the notebook will attempt to clone this repository:
 
 - `muhfajri24/Gojek-Review-Insight`
 
 ## Visuals
 
-Visual utama tersedia di folder:
+Main visual outputs are available in:
 
 - `output/figures/sentiment_distribution.png`
 - `output/figures/top_terms.png`
 - `output/figures/wordcloud_positive.png`
 - `output/figures/wordcloud_negative.png`
 
-## Why This Project Is Strong for Portfolio
+## Why This Project Works Well for a Portfolio
 
-- Topiknya relevan dan mudah dipahami recruiter
-- Fokus pada NLP Bahasa Indonesia
-- Mencakup EDA, preprocessing, TF-IDF, model comparison, evaluasi, dan business insight
-- Ada error analysis, bukan hanya mengejar accuracy
-- Ada Streamlit app untuk demo interaktif
-- Hasil run sudah tersedia sehingga repo tidak terasa kosong
+- The topic is relevant and easy for recruiters to understand.
+- It focuses on Indonesian-language NLP, which gives it a distinct local use case.
+- It covers EDA, preprocessing, TF-IDF, model comparison, evaluation, and business insight.
+- It includes error analysis instead of optimizing only for accuracy.
+- It provides a Streamlit app for interactive demo use.
+- The latest outputs are already included, so the repository feels complete.
 
 ## Future Improvements
 
-- Tambahkan normalisasi slang Bahasa Indonesia yang lebih lengkap
-- Coba model lain seperti Linear SVM atau IndoBERT
-- Tambahkan topic modeling untuk eksplorasi tema keluhan
-- Hubungkan output ke dashboard BI
-- Deploy Streamlit app secara online
+- Expand Indonesian slang normalization coverage.
+- Test additional models such as Linear SVM or IndoBERT.
+- Add topic modeling to explore complaint themes more deeply.
+- Connect the output to a BI dashboard.
+- Deploy the Streamlit app online.
 
 ## References
 

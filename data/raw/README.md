@@ -1,6 +1,6 @@
-Simpan file CSV Kaggle di folder ini dengan nama `gojek_reviews.csv`.
+Place the Kaggle CSV file in this folder using the name `gojek_reviews.csv`.
 
-Project juga akan mencoba membaca file CSV pertama di folder ini jika nama filenya berbeda.
+The project will also try to read the first CSV file in this folder if the filename is different.
 
-Disarankan hanya menyimpan file CSV hasil ekstrak di folder ini.
-File `.zip` hasil download Kaggle tidak perlu ikut disimpan di repository.
+It is recommended to keep only the extracted CSV file here.
+The downloaded Kaggle `.zip` archive does not need to be stored in the repository.

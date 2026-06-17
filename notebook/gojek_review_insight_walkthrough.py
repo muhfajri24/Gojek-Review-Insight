@@ -41,8 +41,8 @@ def resolve_project_root() -> Path:
         return colab_target
 
     raise FileNotFoundError(
-        "Project root tidak ditemukan. Jalankan notebook dari folder project, "
-        "atau pastikan repo `muhfajri24/Gojek-Review-Insight` tersedia di runtime."
+        "Project root was not found. Run this notebook from the project folder, "
+        "or make sure the `muhfajri24/Gojek-Review-Insight` repository is available in the runtime."
     )
 
 
@@ -93,18 +93,18 @@ def show_section(title: str, subtitle: str = "") -> None:
 # %%
 show_section(
     "1. Dataset Loading",
-    "Pastikan file CSV Kaggle sudah diletakkan di `data/raw/gojek_reviews.csv` sebelum menjalankan walkthrough ini.",
+    "Make sure the Kaggle CSV file is placed in `data/raw/gojek_reviews.csv` before running this walkthrough.",
 )
 dataset_path = find_dataset_path()
 raw_df = load_dataset(dataset_path)
 
 print("Dataset path:", dataset_path)
-print("Jumlah data mentah:", len(raw_df))
+print("Raw row count:", len(raw_df))
 display(raw_df.head())
 
 
 # %%
-show_section("2. Struktur Kolom", "Lihat nama kolom dan beberapa informasi dasar dataset.")
+show_section("2. Column Structure", "Review the column names and core dataset metadata.")
 standardized_df = standardize_review_dataset(raw_df)
 overview_df = pd.DataFrame(
     {
@@ -118,7 +118,7 @@ display(overview_df)
 
 
 # %%
-show_section("3. Missing Values", "Identifikasi kolom yang perlu perhatian saat data cleaning.")
+show_section("3. Missing Values", "Identify the columns that need attention during data cleaning.")
 missing_df = (
     standardized_df.isna()
     .sum()
@@ -138,51 +138,51 @@ plt.show()
 
 
 # %%
-show_section("4. Preprocessing", "Lowercase, hapus simbol, stopword Bahasa Indonesia, dan stemming Sastrawi.")
+show_section("4. Preprocessing", "Lowercase the text, remove noise, apply Indonesian stopwords, and run Sastrawi stemming.")
 processed_df = preprocess_reviews(raw_df)
 
-print("Jumlah data setelah preprocessing:", len(processed_df))
+print("Rows after preprocessing:", len(processed_df))
 display(processed_df[["review_text", "clean_text", "sentiment"]].head(10))
 
 
 # %%
-show_section("5. Distribusi Sentimen", "Periksa distribusi rating atau sentimen yang berhasil diinfer.")
+show_section("5. Sentiment Distribution", "Review the observed or inferred sentiment distribution.")
 sentiment_counts = processed_df["sentiment"].value_counts().rename_axis("sentiment").reset_index(name="count")
 display(sentiment_counts)
 
 plt.figure(figsize=(8, 5))
 sns.countplot(data=processed_df, x="sentiment", hue="sentiment", palette="Set2", legend=False)
-plt.title("Distribusi Sentimen Review Gojek")
+plt.title("Gojek Review Sentiment Distribution")
 plt.tight_layout()
 plt.show()
 
 
 # %%
-show_section("6. Contoh Review Positif dan Negatif", "Gunakan contoh ini untuk cerita bisnis saat presentasi.")
+show_section("6. Positive and Negative Review Examples", "Use these examples to support the business narrative during a presentation.")
 positive_examples = processed_df.loc[processed_df["sentiment"] == "positive", ["review_text"]].head(5)
 negative_examples = processed_df.loc[processed_df["sentiment"] == "negative", ["review_text"]].head(5)
 
-display(Markdown("### Contoh Review Positif"))
+display(Markdown("### Positive Review Examples"))
 display(positive_examples)
-display(Markdown("### Contoh Review Negatif"))
+display(Markdown("### Negative Review Examples"))
 display(negative_examples)
 
 
 # %%
-show_section("7. Kata Paling Sering Muncul", "Lihat top 20 token setelah preprocessing.")
+show_section("7. Most Frequent Terms", "Inspect the top 20 tokens after preprocessing.")
 top_terms_df = get_top_terms(processed_df, top_n=20)
 display(top_terms_df)
 
 plt.figure(figsize=(10, 7))
 chart_df = top_terms_df.sort_values("count", ascending=True)
 plt.barh(chart_df["term"], chart_df["count"], color="#2f6b8a")
-plt.title("Top 20 Kata Paling Sering Muncul")
+plt.title("Top 20 Most Frequent Terms")
 plt.tight_layout()
 plt.show()
 
 
 # %%
-show_section("8. Wordcloud", "Buat wordcloud untuk review positif dan negatif.")
+show_section("8. Word Clouds", "Generate word clouds for positive and negative reviews.")
 save_wordcloud(processed_df, "positive")
 save_wordcloud(processed_df, "negative")
 
@@ -192,30 +192,30 @@ negative_image = plt.imread(FIGURES_DIR / "wordcloud_negative.png")
 fig, axes = plt.subplots(1, 2, figsize=(14, 6))
 axes[0].imshow(positive_image)
 axes[0].axis("off")
-axes[0].set_title("Wordcloud Positif")
+axes[0].set_title("Positive Word Cloud")
 axes[1].imshow(negative_image)
 axes[1].axis("off")
-axes[1].set_title("Wordcloud Negatif")
+axes[1].set_title("Negative Word Cloud")
 plt.tight_layout()
 plt.show()
 
 
 # %%
-show_section("9. Data untuk Modeling", "Fokuskan model pada kelas positive vs negative.")
+show_section("9. Modeling Dataset", "Focus the classifier on the positive vs negative classes.")
 modeling_df = prepare_modeling_data(processed_df)
 display(modeling_df["sentiment"].value_counts().to_frame(name="count"))
 display(modeling_df[["clean_text", "sentiment"]].head())
 
 
 # %%
-show_section("10. Training dan Evaluasi Model", "Bandingkan Naive Bayes, Logistic Regression, dan Random Forest.")
+show_section("10. Model Training and Evaluation", "Compare Naive Bayes, Logistic Regression, and Random Forest.")
 result = build_project_outputs()
 metrics_df = result["metrics"]
 display(metrics_df)
 
 
 # %%
-show_section("11. Visual Review", "Tampilkan confusion matrix dan insight files yang sudah diekspor.")
+show_section("11. Visual Review", "Inspect the exported confusion matrices and supporting insight files.")
 for image_path in sorted(FIGURES_DIR.glob("confusion_matrix_*.png")):
     print(image_path.name)
 
@@ -224,7 +224,7 @@ display(error_analysis_df.head(10))
 
 
 # %%
-show_section("12. Business Insight", "Ringkasan ini bisa langsung dipakai untuk README atau presentasi.")
+show_section("12. Business Insight", "This summary can be reused directly in the README or presentation deck.")
 print(build_readme_highlight(result))
 print()
 print((REPORTS_DIR / "business_insights.md").read_text(encoding="utf-8"))

@@ -1,4 +1,3 @@
 # App Assets
 
-Folder ini disediakan untuk aset tambahan aplikasi jika nanti Anda ingin menambahkan logo, screenshot, atau helper module khusus Streamlit.
-
+This folder is reserved for optional application assets such as logos, screenshots, or Streamlit-specific helper modules.

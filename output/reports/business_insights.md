@@ -1,30 +1,30 @@
 # Gojek Review Insight Summary
 
-## Ringkasan Dataset
+## Dataset Summary
 
-- Total review setelah preprocessing: `6,152`
-- Distribusi sentimen: `{'positive': 3131, 'negative': 2670, 'neutral': 351}`
-- Model terbaik berdasarkan F1-score: `Naive Bayes`
-- F1-score terbaik: `0.8818`
+- Total reviews after preprocessing: `6,152`
+- Sentiment distribution: `{'positive': 3131, 'negative': 2670, 'neutral': 351}`
+- Best model by F1-score: `Naive Bayes`
+- Best F1-score: `0.8818`
 
-## Keluhan Utama Pengguna
+## Main User Complaints
 
-Kata yang paling sering muncul pada review negatif mengarah ke tema seperti: `driver, makin, gopay, mau, padahal, lama, bayar, malah`.
-Secara praktis, ini biasanya berkaitan dengan masalah performa aplikasi, proses login, promo, pembayaran, atau pengalaman pemesanan yang tidak konsisten.
+The most frequent terms in negative reviews point to themes such as: `driver, makin, gopay, mau, padahal, lama, bayar, malah`.
+In practice, these terms usually relate to app performance issues, login friction, promotions, payments, or inconsistent ordering experiences.
 
-## Aspek yang Disukai Pengguna
+## Positive Experience Drivers
 
-Review positif lebih sering menonjolkan kata seperti: `sangat, bantu, bagus, baik, mudah, mantap, cepat, banyak`.
-Ini biasanya menunjukkan apresiasi pengguna terhadap kemudahan penggunaan, kecepatan layanan, promo yang menarik, dan manfaat aplikasi dalam aktivitas harian.
+Positive reviews more often highlight terms such as: `sangat, bantu, bagus, baik, mudah, mantap, cepat, banyak`.
+This typically reflects appreciation for ease of use, service speed, attractive promotions, and the app's practical value in daily activities.
 
 ## Error Analysis
 
-- Jumlah review yang salah diprediksi model terbaik: `140`
-- Pola umum kesalahan: review bercampur antara pujian dan keluhan, bahasa gaul, typo, dan konteks sarkastik.
+- Number of reviews misclassified by the best model: `140`
+- Common failure patterns: mixed praise-and-complaint reviews, slang-heavy language, typos, and sarcastic phrasing.
 
-## Rekomendasi Bisnis
+## Business Recommendations
 
-1. Prioritaskan investigasi pada tema negatif yang paling dominan di `top_terms.csv` dan `wordcloud_negative.png`.
-2. Audit perjalanan pengguna pada area yang paling sering dikeluhkan seperti pembayaran, promo, atau stabilitas aplikasi.
-3. Pertahankan elemen yang sering dipuji pengguna dan jadikan itu bahan komunikasi produk.
-4. Gunakan review salah prediksi sebagai sumber tambahan untuk memperkaya kamus normalisasi slang Bahasa Indonesia.
+1. Prioritize investigation into the most dominant negative themes shown in `top_terms.csv` and `wordcloud_negative.png`.
+2. Audit the user journey in the areas most frequently criticized, such as payments, promotions, and application stability.
+3. Preserve the features users consistently praise and turn them into product communication strengths.
+4. Use misclassified reviews as an additional source for expanding the Indonesian slang normalization dictionary.
