@@ -1,6 +1,6 @@
 # Gojek Review Insight
 
-This project analyzes Indonesian-language Gojek app reviews to classify sentiment, surface recurring complaint themes, and translate review data into product insight.
+This project analyzes Indonesian-language Gojek app reviews to classify sentiment, surface recurring complaint themes, and translate text data into product insight.
 
 ## What This Project Does
 
@@ -12,7 +12,14 @@ This project analyzes Indonesian-language Gojek app reviews to classify sentimen
 
 ## Why It Matters
 
-This project shows how Python can transform unstructured review text into measurable sentiment signals that help explain customer pain points, product quality, and service improvement priorities.
+This project demonstrates a natural language processing workflow: cleaning Indonesian text, extracting TF-IDF features, comparing classification models, and using the results to explain customer pain points and service quality issues.
+
+## Data Science Focus
+
+- Natural language processing for Indonesian text
+- Text preprocessing, stemming, and vectorization
+- Sentiment classification and model comparison
+- Error analysis and theme extraction from reviews
 
 ## Primary Workflow
 
