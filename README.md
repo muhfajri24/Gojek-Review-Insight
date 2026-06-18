@@ -1,6 +1,6 @@
 # Gojek Review Insight
 
-Portfolio project for analyzing Indonesian-language Gojek app reviews to classify sentiment, surface recurring complaint themes, and translate review data into product insight.
+This project analyzes Indonesian-language Gojek app reviews to classify sentiment, surface recurring complaint themes, and translate review data into product insight.
 
 ## What This Project Does
 
@@ -8,7 +8,7 @@ Portfolio project for analyzing Indonesian-language Gojek app reviews to classif
 - Applies Indonesian text preprocessing and TF-IDF feature extraction
 - Compares `Naive Bayes`, `Logistic Regression`, and `Random Forest`
 - Highlights complaint patterns, model performance, and business recommendations
-- Provides a lightweight Streamlit app for portfolio demo
+- Provides a lightweight Streamlit app for interactive review and testing
 
 ## Why It Matters
 
