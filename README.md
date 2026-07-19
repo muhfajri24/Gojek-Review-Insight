@@ -1,47 +1,36 @@
 # Gojek Review Insight
 
-Gojek Review Insight analyzes Indonesian-language Gojek app reviews, classifies them as negative, neutral, or positive, compares baseline machine-learning models, identifies recurring complaint themes, and converts the resulting evidence into cautious product-oriented insights. The repository prioritizes reproducibility and methodological transparency rather than claiming production readiness.
+### What are Gojek users actually complaining about -- and can an Indonesian NLP pipeline find it without erasing negation or leaking duplicate reviews into the test set?
 
-## Project Overview
+This repository turns **225,002 raw Gojek app reviews** into an auditable customer-feedback workflow: rating-derived three-class sentiment, leakage-controlled TF-IDF experiments, error analysis, and explainable complaint triage. It does not hide the uncomfortable results: the simpler text cleaner beat Sastrawi stemming, neutral sentiment remained weak, and 41.72% of negative reviews did not fit the initial complaint taxonomy.
 
-App stores contain direct feedback about reliability, payments, pricing, drivers, promotions, and other parts of the customer experience. Reading thousands of reviews manually is slow, while relying only on star averages hides the language behind those ratings.
+## The 60-second brief
 
-This project provides a reproducible Python workflow that validates and cleans review data, derives transparent rating-based sentiment labels, compares TF-IDF classifiers, evaluates class-level performance, exports prediction errors, and groups negative reviews into explainable complaint categories. A local Streamlit app demonstrates inference with the exact fitted pipeline.
+| Product or modeling question | Verified answer |
+|---|---|
+| What data reached modeling? | **6,162** validated reviews from Gojek app versions beginning with 4.8 |
+| What complaint signal appeared most often? | **Payment problems:** 576 negative reviews (21.59%) |
+| Did stemming improve Indonesian sentiment classification? | **No.** Best macro F1 fell from 0.6327 to 0.6144 |
+| Which model balanced all three classes best? | **Balanced Logistic Regression**, macro F1 **0.6327** |
+| What failed most visibly? | **Neutral sentiment**, F1 **0.2267** |
+| Was normalized duplicate leakage found across the split? | **No:** train/test normalized-text overlap was **0** |
+| How much negative feedback remained unexplained? | **1,113 reviews (41.72%)** remained uncategorized |
 
-Install the environment and regenerate every output with:
+## Why this is not a leaderboard exercise
+
+- **The preprocessing decision came from evidence.** Negation is preserved, basic cleaning and selective stemming are compared on the same split, and the simpler variant wins.
+- **The split is treated as an ML design problem.** Equivalent normalized reviews are grouped so they cannot appear on both sides of evaluation.
+- **Failure modes are deliverables.** The repository exports 247 test errors with confidence, error direction, and language-pattern flags.
+- **Complaint themes remain falsifiable.** Keyword rules, representative reviews, overlap, and the large uncategorized group are all exposed instead of being presented as topic modeling.
+- **The output is usable beyond a notebook.** One command rebuilds metrics, figures, insights, and the raw-text Scikit-learn pipeline used by the local Streamlit demo.
 
 ```bash
-python -m venv .venv
 pip install -r requirements.txt
 python -m src.sentiment_pipeline
+streamlit run streamlit_app.py
 ```
 
-## Objectives
-
-- Classify reviews into negative, neutral, and positive sentiment categories.
-- Compare interpretable baseline machine-learning models on one shared split.
-- Evaluate performance beyond accuracy using macro and weighted metrics.
-- Identify recurring themes in rating-derived negative reviews.
-- Analyze prediction errors and difficult language patterns.
-- Produce evidence-based, appropriately caveated product recommendations.
-
-## Key Results
-
-| Item | Verified result |
-|---|---|
-| Raw dataset | 225,002 reviews |
-| Usable reviews | 6,162 reviews after version filtering and validation |
-| Sentiment classes | 2,668 negative; 349 neutral; 3,145 positive |
-| Train / test rows | 4,930 / 1,232 |
-| Best model | Logistic Regression with `class_weight="balanced"` |
-| Selected preprocessing | Basic cleaning without stemming |
-| Test macro F1 | **0.6327** |
-| Test weighted F1 | **0.8037** |
-| Hardest class | Neutral, F1 **0.2267** |
-| Most frequent matched complaint theme | Payment problems: 576 reviews, 21.59% of negative reviews |
-| Normalized-text overlap across split | 0 |
-
-These results describe one fixed, grouped holdout split. They are not estimates of production performance.
+> Scope: this is a portfolio analysis built from rating-derived proxy labels and one fixed grouped holdout split -- not a deployed or production-performance claim.
 
 ## Dataset
 
@@ -81,17 +70,17 @@ This rule is transparent and reproducible, but ratings are only proxy labels. Re
 
 ## Methodology
 
-1. **Data validation**  locate the local CSV and validate review and target-source columns.
-2. **Review cleaning**  remove invalid text, exact duplicates, empty normalized text, and conflicting normalized-label groups.
-3. **Label generation**  map ratings 1-2, 3, and 4-5 to negative, neutral, and positive.
-4. **Text preprocessing**  compare basic cleaning with negation-safe stopword handling and selective stemming.
-5. **Grouped split**  use a fixed, stratified 80/20 split grouped by normalized review text.
-6. **Feature extraction**  fit unigram and bigram TF-IDF inside each Scikit-learn pipeline.
-7. **Model comparison**  train four classifiers on the same split.
-8. **Evaluation**  calculate accuracy, macro metrics, weighted metrics, per-class metrics, reports, and confusion matrices.
-9. **Error analysis**  export misclassified reviews, confidence, error direction, and diagnostic language flags.
-10. **Complaint categorization**  apply documented keyword rules to rating-derived negative reviews.
-11. **Business interpretation**  generate findings and recommendations directly from saved outputs.
+1. **Data validation:** locate the local CSV and validate review and target-source columns.
+2. **Review cleaning:** remove invalid text, exact duplicates, empty normalized text, and conflicting normalized-label groups.
+3. **Label generation:** map ratings 1-2, 3, and 4-5 to negative, neutral, and positive.
+4. **Text preprocessing:** compare basic cleaning with negation-safe stopword handling and selective stemming.
+5. **Grouped split:** use a fixed, stratified 80/20 split grouped by normalized review text.
+6. **Feature extraction:** fit unigram and bigram TF-IDF inside each Scikit-learn pipeline.
+7. **Model comparison:** train four classifiers on the same split.
+8. **Evaluation:** calculate accuracy, macro metrics, weighted metrics, per-class metrics, reports, and confusion matrices.
+9. **Error analysis:** export misclassified reviews, confidence, error direction, and diagnostic language flags.
+10. **Complaint categorization:** apply documented keyword rules to rating-derived negative reviews.
+11. **Business interpretation:** generate findings and recommendations directly from saved outputs.
 
 All learned transformations are fitted on training data. The saved artifact accepts raw review text and contains preprocessing, TF-IDF, and the selected classifier.
 
@@ -164,7 +153,7 @@ The project uses **explainable complaint-theme categorization**, not topic model
 
 | Theme | Review count | Percentage of negative reviews | Representative keywords |
 |---|---:|---:|---|
-| Other / uncategorized | 1,113 | 41.72% |  |
+| Other / uncategorized | 1,113 | 41.72% | None |
 | Payment problems | 576 | 21.59% | gopay, bayar, pembayaran, saldo, transfer |
 | Driver availability | 448 | 16.79% | driver, pengemudi, cari driver |
 | Pricing | 231 | 8.66% | mahal, harga, tarif, ongkir, biaya |
@@ -179,7 +168,7 @@ The 41.72% uncategorized share is intentionally visible. It shows that the curre
 
 ## Key Product Findings
 
-### Finding 1  Payment-related complaints are the largest matched category
+### Finding 1: Payment-related complaints are the largest matched category
 
 **Evidence:**
 Payment keywords matched 576 negative reviews, or 21.59% of all rating-derived negative reviews.
@@ -190,7 +179,7 @@ This suggests recurring friction around payment, balance, transfer, or top-up ex
 **Recommendation:**
 Sample and manually label the matched reviews by payment journey, then compare failure reasons across payment, balance deduction, transfer, and top-up flows before prioritizing fixes.
 
-### Finding 2  Driver availability is another prominent complaint signal
+### Finding 2: Driver availability is another prominent complaint signal
 
 **Evidence:**
 Driver-availability rules matched 448 negative reviews, or 16.79%.
@@ -201,7 +190,7 @@ The volume may reflect difficulty finding a driver or broader dissatisfaction in
 **Recommendation:**
 Refine the category into availability, cancellation, conduct, and matching subtypes, then inspect differences by time and location if privacy-safe metadata becomes available.
 
-### Finding 3  The complaint taxonomy has substantial uncovered feedback
+### Finding 3: The complaint taxonomy has substantial uncovered feedback
 
 **Evidence:**
 1,113 negative reviews, or 41.72%, did not match any current category.
@@ -212,7 +201,7 @@ The uncategorized share indicates that a small keyword taxonomy cannot represent
 **Recommendation:**
 Manually review a stratified sample of uncategorized reviews and add a category only when a coherent, recurring pattern is supported by evidence.
 
-### Finding 4  Neutral sentiment remains difficult to identify
+### Finding 4: Neutral sentiment remains difficult to identify
 
 **Evidence:**
 Neutral-class F1 was 0.2267. Only 17 of 69 neutral test reviews were correctly classified; 42 were predicted as negative.
