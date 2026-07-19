@@ -1,0 +1,25 @@
+{
+  "rows_after_version_filter": 8089,
+  "exact_duplicate_reviews_removed": 1905,
+  "empty_after_basic_cleaning_removed": 0,
+  "conflicting_normalized_text_rows_removed": 22,
+  "usable_rows": 6162,
+  "train_rows": 4930,
+  "test_rows": 1232,
+  "class_distribution_total": {
+    "positive": 3145,
+    "negative": 2668,
+    "neutral": 349
+  },
+  "class_distribution_train": {
+    "positive": 2516,
+    "negative": 2134,
+    "neutral": 280
+  },
+  "class_distribution_test": {
+    "positive": 629,
+    "negative": 534,
+    "neutral": 69
+  },
+  "normalized_text_overlap": 0
+}

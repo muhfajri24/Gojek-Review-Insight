@@ -2,94 +2,86 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-
-import joblib
 import pandas as pd
 import streamlit as st
-
-from src.sentiment_pipeline import clean_text
-
+from src.inference import load_sentiment_pipeline, predict_review
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-MODEL_PATH = PROJECT_ROOT / "output" / "models" / "best_sentiment_model.joblib"
-METRICS_PATH = PROJECT_ROOT / "output" / "reports" / "metrics_summary.csv"
-SUMMARY_PATH = PROJECT_ROOT / "output" / "reports" / "business_insights.md"
-PROJECT_SUMMARY_PATH = PROJECT_ROOT / "output" / "reports" / "project_summary.json"
+MODEL_PATH = PROJECT_ROOT / "models" / "best_sentiment_pipeline.joblib"
+METADATA_PATH = PROJECT_ROOT / "models" / "best_sentiment_pipeline.metadata.json"
+METRICS_PATH = PROJECT_ROOT / "output" / "metrics" / "model_comparison.csv"
+CLASS_FIGURE_PATH = PROJECT_ROOT / "output" / "figures" / "class_distribution.png"
+THEMES_PATH = PROJECT_ROOT / "output" / "insights" / "complaint_themes.csv"
 
 
 @st.cache_resource
 def load_model():
-    if not MODEL_PATH.exists():
-        return None
-    return joblib.load(MODEL_PATH)
+    return load_sentiment_pipeline(MODEL_PATH)
 
 
 @st.cache_data
-def load_metrics() -> pd.DataFrame:
-    if not METRICS_PATH.exists():
-        return pd.DataFrame()
-    return pd.read_csv(METRICS_PATH)
-
-
-@st.cache_data
-def load_project_summary() -> dict[str, object]:
-    if not PROJECT_SUMMARY_PATH.exists():
-        return {}
-    return json.loads(PROJECT_SUMMARY_PATH.read_text(encoding="utf-8"))
+def load_optional_outputs():
+    metadata = json.loads(METADATA_PATH.read_text(encoding="utf-8")) if METADATA_PATH.is_file() else {}
+    metrics = pd.read_csv(METRICS_PATH) if METRICS_PATH.is_file() else pd.DataFrame()
+    themes = pd.read_csv(THEMES_PATH) if THEMES_PATH.is_file() else pd.DataFrame()
+    return metadata, metrics, themes
 
 
 st.set_page_config(page_title="Gojek Review Insight", layout="wide")
-
 st.title("Gojek Review Insight")
-st.caption("A lightweight app for detecting sentiment in Indonesian-language Gojek user reviews.")
-
-model = load_model()
-metrics_df = load_metrics()
-project_summary = load_project_summary()
-
-if model is None:
-    st.warning(
-        "The model is not available yet. Run `python -m src.sentiment_pipeline` "
-        "after placing the CSV file in `data/raw/gojek_reviews.csv`."
-    )
+st.caption("Portfolio analysis of rating-derived sentiment in Indonesian Gojek reviews. Predictions are not authoritative judgments.")
+try:
+    model = load_model()
+except FileNotFoundError:
+    st.error("The model artifact is missing. Run python -m src.sentiment_pipeline from the project root, then restart this app.")
+    st.stop()
+except Exception as exc:
+    st.error(f"The model artifact could not be loaded: {exc}")
     st.stop()
 
-left, right = st.columns([1.4, 1])
-
+metadata, metrics_df, themes_df = load_optional_outputs()
+left, right = st.columns([1.25, 1])
 with left:
-    user_review = st.text_area(
-        "Enter a user review",
-        height=180,
-        placeholder="Example: the Gojek app is very helpful, but lately it often fails during payment.",
-    )
-
-    if st.button("Predict Sentiment", use_container_width=True):
-        if not user_review.strip():
-            st.error("Please enter a review first.")
+    st.subheader("Review prediction")
+    review = st.text_area("Indonesian review text", height=170, placeholder="Contoh: Pembayaran sering gagal dan aplikasinya lambat.")
+    if st.button("Predict sentiment", use_container_width=True):
+        try:
+            prediction = predict_review(review, model)
+        except ValueError as exc:
+            st.warning(str(exc))
+        except Exception as exc:
+            st.error(f"Prediction failed: {exc}")
         else:
-            cleaned_review = clean_text(user_review)
-            prediction = model.predict([cleaned_review])[0]
-            probabilities = model.predict_proba([cleaned_review])[0]
-            labels = model.named_steps["model"].classes_
-            confidence = float(probabilities[labels.tolist().index(prediction)])
-
-            st.subheader("Prediction Result")
-            st.success(f"Detected sentiment: **{prediction.title()}**")
-            st.metric("Confidence Score", f"{confidence:.2%}")
-            st.caption(f"Text after preprocessing: `{cleaned_review}`")
-
-            probability_df = pd.DataFrame({"sentiment": labels, "probability": probabilities})
-            st.bar_chart(probability_df.set_index("sentiment"))
+            st.success(f"Predicted sentiment: **{str(prediction['label']).title()}**")
+            if prediction["confidence"] is not None:
+                st.metric("Prediction confidence", f"{prediction['confidence']:.2%}")
+                probability_df = pd.DataFrame(list(prediction["probabilities"].items()), columns=["sentiment", "probability"])
+                st.bar_chart(probability_df.set_index("sentiment"))
 
 with right:
-    st.subheader("Model Summary")
-    if project_summary:
-        st.write(f"Best model: **{project_summary.get('best_model', '-')}**")
-        st.write(f"Selection metric: **{project_summary.get('selection_metric', '-')}**")
-
+    st.subheader("Model evaluation")
+    if metadata:
+        st.write(f"Selected model: **{metadata.get('model', '-')}**")
+        st.write(f"Preprocessing: **{metadata.get('preprocessing_variant', '-')}**")
+        macro_f1 = metadata.get("metrics", {}).get("macro_f1")
+        if macro_f1 is not None:
+            st.metric("Test macro F1", f"{macro_f1:.3f}")
     if not metrics_df.empty:
-        st.dataframe(metrics_df, use_container_width=True)
+        st.dataframe(metrics_df.sort_values("macro_f1", ascending=False), use_container_width=True, hide_index=True)
+    else:
+        st.info("Optional model-comparison output is unavailable.")
 
-    if SUMMARY_PATH.exists():
-        st.subheader("Key Insights")
-        st.markdown(SUMMARY_PATH.read_text(encoding="utf-8"))
+st.subheader("Dataset class distribution")
+if CLASS_FIGURE_PATH.is_file():
+    st.image(str(CLASS_FIGURE_PATH), use_container_width=True)
+else:
+    st.info("Class-distribution figure is unavailable.")
+
+st.subheader("Explainable complaint-theme categorization")
+st.caption("Categories use documented keyword rules. Reviews may match more than one category; this is not topic modeling.")
+if not themes_df.empty:
+    visible = themes_df[["theme", "review_count", "percentage_of_negative_reviews"]].copy()
+    visible["percentage_of_negative_reviews"] = visible["percentage_of_negative_reviews"].map(lambda value: f"{value:.2f}%")
+    st.dataframe(visible, use_container_width=True, hide_index=True)
+else:
+    st.info("Complaint-theme output is unavailable.")

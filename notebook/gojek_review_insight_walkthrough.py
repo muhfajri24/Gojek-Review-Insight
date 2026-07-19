@@ -1,230 +1,44 @@
 # %%
-"""
-Notebook-style walkthrough for the Gojek Review Insight project.
-
-Open this file in VS Code and run each `# %%` cell step by step to present the
-analysis like a Jupyter notebook while keeping the project logic modular.
-"""
+"""Optional notebook-style walkthrough for the primary Python pipeline."""
 
 from pathlib import Path
-import subprocess
 import sys
-
-import matplotlib.pyplot as plt
 import pandas as pd
-import seaborn as sns
-from IPython.display import Markdown, display
 
 
 def resolve_project_root() -> Path:
-    """Resolve the project root for local notebooks, Jupyter, or Colab."""
-    candidates: list[Path] = []
-
+    candidates = [Path.cwd().resolve(), *Path.cwd().resolve().parents]
     if "__file__" in globals():
-        candidates.append(Path(__file__).resolve().parent)
-
-    cwd = Path.cwd().resolve()
-    candidates.extend([cwd, *cwd.parents])
-
+        candidates.insert(0, Path(__file__).resolve().parent.parent)
     for candidate in candidates:
-        if (candidate / "src" / "sentiment_pipeline.py").exists():
+        if (candidate / "src" / "sentiment_pipeline.py").is_file():
             return candidate
-
-    colab_target = Path("/content/Gojek-Review-Insight")
-    if "google.colab" in sys.modules and not colab_target.exists():
-        subprocess.run(
-            ["git", "clone", "https://github.com/muhfajri24/Gojek-Review-Insight.git", str(colab_target)],
-            check=True,
-        )
-
-    if (colab_target / "src" / "sentiment_pipeline.py").exists():
-        return colab_target
-
-    raise FileNotFoundError(
-        "Project root was not found. Run this notebook from the project folder, "
-        "or make sure the `muhfajri24/Gojek-Review-Insight` repository is available in the runtime."
-    )
-
-
-def ensure_dependencies(project_root: Path) -> None:
-    """Install project dependencies automatically in Google Colab."""
-    if "google.colab" not in sys.modules:
-        return
-
-    requirements_path = project_root / "requirements.txt"
-    subprocess.run(
-        [sys.executable, "-m", "pip", "install", "-r", str(requirements_path)],
-        check=True,
-    )
+    raise FileNotFoundError("Run this walkthrough from the project repository.")
 
 
 PROJECT_ROOT = resolve_project_root()
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
-ensure_dependencies(PROJECT_ROOT)
 
-from src.sentiment_pipeline import (  # noqa: E402
-    FIGURES_DIR,
-    REPORTS_DIR,
-    build_project_outputs,
-    build_readme_highlight,
-    find_dataset_path,
-    get_top_terms,
-    load_dataset,
-    preprocess_reviews,
-    prepare_modeling_data,
-    save_wordcloud,
-    standardize_review_dataset,
-)
-
-
-sns.set_theme(style="whitegrid")
-pd.set_option("display.max_columns", None)
-pd.set_option("display.width", 160)
-
-
-def show_section(title: str, subtitle: str = "") -> None:
-    text = f"## {title}"
-    if subtitle:
-        text += f"\n\n{subtitle}"
-    display(Markdown(text))
-
+from src.data import find_dataset_path, load_dataset  # noqa: E402
+from src.sentiment_pipeline import run_pipeline  # noqa: E402
 
 # %%
-show_section(
-    "1. Dataset Loading",
-    "Make sure the Kaggle CSV file is placed in `data/raw/gojek_reviews.csv` before running this walkthrough.",
-)
 dataset_path = find_dataset_path()
-raw_df = load_dataset(dataset_path)
-
-print("Dataset path:", dataset_path)
-print("Raw row count:", len(raw_df))
-display(raw_df.head())
-
+raw_df, _ = load_dataset(dataset_path)
+print("Dataset:", dataset_path.relative_to(PROJECT_ROOT))
+print("Validated raw shape:", raw_df.shape)
+raw_df.head()
 
 # %%
-show_section("2. Column Structure", "Review the column names and core dataset metadata.")
-standardized_df = standardize_review_dataset(raw_df)
-overview_df = pd.DataFrame(
-    {
-        "column": standardized_df.columns,
-        "dtype": standardized_df.dtypes.astype(str).values,
-        "missing_count": standardized_df.isna().sum().values,
-        "unique_count": standardized_df.nunique(dropna=False).values,
-    }
-)
-display(overview_df)
-
+result = run_pipeline()
+result["comparison"]
 
 # %%
-show_section("3. Missing Values", "Identify the columns that need attention during data cleaning.")
-missing_df = (
-    standardized_df.isna()
-    .sum()
-    .rename("missing_count")
-    .reset_index()
-    .rename(columns={"index": "column"})
-    .sort_values("missing_count", ascending=False)
-)
-display(missing_df)
-
-plt.figure(figsize=(10, 5))
-sns.barplot(data=missing_df, x="column", y="missing_count", hue="column", palette="crest", legend=False)
-plt.title("Missing Values per Column")
-plt.xticks(rotation=30, ha="right")
-plt.tight_layout()
-plt.show()
-
+pd.read_csv(PROJECT_ROOT / "output" / "metrics" / "classification_report_best_model.csv")
 
 # %%
-show_section("4. Preprocessing", "Lowercase the text, remove noise, apply Indonesian stopwords, and run Sastrawi stemming.")
-processed_df = preprocess_reviews(raw_df)
-
-print("Rows after preprocessing:", len(processed_df))
-display(processed_df[["review_text", "clean_text", "sentiment"]].head(10))
-
+pd.read_csv(PROJECT_ROOT / "output" / "insights" / "complaint_themes.csv")
 
 # %%
-show_section("5. Sentiment Distribution", "Review the observed or inferred sentiment distribution.")
-sentiment_counts = processed_df["sentiment"].value_counts().rename_axis("sentiment").reset_index(name="count")
-display(sentiment_counts)
-
-plt.figure(figsize=(8, 5))
-sns.countplot(data=processed_df, x="sentiment", hue="sentiment", palette="Set2", legend=False)
-plt.title("Gojek Review Sentiment Distribution")
-plt.tight_layout()
-plt.show()
-
-
-# %%
-show_section("6. Positive and Negative Review Examples", "Use these examples to support the business narrative during a presentation.")
-positive_examples = processed_df.loc[processed_df["sentiment"] == "positive", ["review_text"]].head(5)
-negative_examples = processed_df.loc[processed_df["sentiment"] == "negative", ["review_text"]].head(5)
-
-display(Markdown("### Positive Review Examples"))
-display(positive_examples)
-display(Markdown("### Negative Review Examples"))
-display(negative_examples)
-
-
-# %%
-show_section("7. Most Frequent Terms", "Inspect the top 20 tokens after preprocessing.")
-top_terms_df = get_top_terms(processed_df, top_n=20)
-display(top_terms_df)
-
-plt.figure(figsize=(10, 7))
-chart_df = top_terms_df.sort_values("count", ascending=True)
-plt.barh(chart_df["term"], chart_df["count"], color="#2f6b8a")
-plt.title("Top 20 Most Frequent Terms")
-plt.tight_layout()
-plt.show()
-
-
-# %%
-show_section("8. Word Clouds", "Generate word clouds for positive and negative reviews.")
-save_wordcloud(processed_df, "positive")
-save_wordcloud(processed_df, "negative")
-
-positive_image = plt.imread(FIGURES_DIR / "wordcloud_positive.png")
-negative_image = plt.imread(FIGURES_DIR / "wordcloud_negative.png")
-
-fig, axes = plt.subplots(1, 2, figsize=(14, 6))
-axes[0].imshow(positive_image)
-axes[0].axis("off")
-axes[0].set_title("Positive Word Cloud")
-axes[1].imshow(negative_image)
-axes[1].axis("off")
-axes[1].set_title("Negative Word Cloud")
-plt.tight_layout()
-plt.show()
-
-
-# %%
-show_section("9. Modeling Dataset", "Focus the classifier on the positive vs negative classes.")
-modeling_df = prepare_modeling_data(processed_df)
-display(modeling_df["sentiment"].value_counts().to_frame(name="count"))
-display(modeling_df[["clean_text", "sentiment"]].head())
-
-
-# %%
-show_section("10. Model Training and Evaluation", "Compare Naive Bayes, Logistic Regression, and Random Forest.")
-result = build_project_outputs()
-metrics_df = result["metrics"]
-display(metrics_df)
-
-
-# %%
-show_section("11. Visual Review", "Inspect the exported confusion matrices and supporting insight files.")
-for image_path in sorted(FIGURES_DIR.glob("confusion_matrix_*.png")):
-    print(image_path.name)
-
-error_analysis_df = pd.read_csv(REPORTS_DIR / "error_analysis_examples.csv")
-display(error_analysis_df.head(10))
-
-
-# %%
-show_section("12. Business Insight", "This summary can be reused directly in the README or presentation deck.")
-print(build_readme_highlight(result))
-print()
-print((REPORTS_DIR / "business_insights.md").read_text(encoding="utf-8"))
+print((PROJECT_ROOT / "output" / "insights" / "business_summary.md").read_text(encoding="utf-8"))
