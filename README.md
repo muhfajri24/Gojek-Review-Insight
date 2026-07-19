@@ -218,7 +218,7 @@ Errors were reviewed programmatically and exported with confidence scores, error
 
 - 247 of 1,232 test reviews were misclassified (20.05%).
 - 99 errors contained preserved negation.
-- 45 contained mixed-sentiment markers such as but or however.
+- 45 contained mixed-sentiment markers such as "but" or "however."
 - 28 contained mapped slang forms.
 - 26 were very short.
 - 24 contained repeated characters.
