@@ -6,3 +6,12 @@ __pycache__/
 .DS_Store
 Thumbs.db
 data/raw/*.zip
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.log
+.pytest_cache/
+models/*.joblib
+models/*.json

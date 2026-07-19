@@ -1,0 +1,10 @@
+split,sentiment,count
+total,negative,2668
+total,neutral,349
+total,positive,3145
+train,negative,2134
+train,neutral,280
+train,positive,2516
+test,negative,534
+test,neutral,69
+test,positive,629

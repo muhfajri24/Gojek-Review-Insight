@@ -1,0 +1,248 @@
+review_text,actual_label,rating_if_available,predicted_label,prediction_confidence,error_type,flag_very_short,flag_mixed_sentiment,flag_negation,flag_slang,flag_repeated_characters,flag_emoji_heavy
+Setelah update kok nggak bisa dibuka,positive,4,neutral,0.5268714772016642,positive predicted neutral,False,False,True,False,False,False
+Jadi solusi banget saat ga ada waktu untuk keluar rumah,positive,5,negative,0.5973159862996178,positive predicted negative,False,False,True,False,False,False
+Not yo bad,neutral,3,negative,0.49686159195480517,neutral predicted negative,False,False,False,False,False,False
+Gimana cara nya TF tapi lupa pin Sama nomor telepon sudah kadaluarsa bagaimana cara nyaaaa semoga di balas,negative,1,neutral,0.5466378306594861,negative predicted neutral,False,True,False,False,True,False
+mohon maaf iklanya dikurangi,negative,1,positive,0.5183960746842277,negative predicted positive,False,False,False,False,False,False
+Gopaylater kena blokir hahah,positive,5,negative,0.6735683720505521,positive predicted negative,False,False,False,False,False,False
+Tarifnya jangan makin mahal donk,positive,5,negative,0.5650610716621532,positive predicted negative,False,False,True,False,False,False
+Untuk aplikasi gojek diperingan dong untuk android lollipop Os versi 5,negative,1,positive,0.44785939150368836,negative predicted positive,False,False,False,False,False,False
+Aplikasi degan tarif mahalmasih mending maxim harga murahsaya klo transportasi pk maxim doang,negative,1,positive,0.49712189256483563,negative predicted positive,False,False,False,False,False,False
+Gojek kenapa peta anda sering mengambil jalur yang tidak semestinya Kadang mutar lebih jauh kadang lewat jalur yang dari belakang tidak dapat dijangkau Tolong perbaiki ya sudah sering kejadian,neutral,3,negative,0.4884594598638038,neutral predicted negative,False,False,True,False,False,False
+Untuk saat ini kenapa Gopay Later nya tidak bisa digunakan ya,positive,5,negative,0.6293670047651013,positive predicted negative,False,False,True,False,False,False
+Bagus cepat,negative,2,positive,0.987385686485228,negative predicted positive,True,False,False,False,False,False
+Gopinjaman tidak bisa dipakek percuma udh banyak top up,negative,1,neutral,0.45804412793441274,negative predicted neutral,False,False,True,True,False,False
+G bisa d buka ni susah aplikasi Gojek nya knp ya,positive,5,negative,0.4435278510027789,positive predicted negative,False,False,False,False,False,False
+Ongkir gofood makin mahal,neutral,3,negative,0.5991139862160652,neutral predicted negative,False,False,False,False,False,False
+Aku kasih Bintang 3 karna tidak ada saldo gratis,neutral,3,negative,0.47475925935475893,neutral predicted negative,False,False,True,False,False,False
+Knpa gopaylater saya gk bisa di pake percuma ada limit nya,positive,5,negative,0.5465617142103637,positive predicted negative,False,False,True,True,False,False
+Kadang lama datang nya,positive,4,neutral,0.5329703101225243,positive predicted neutral,False,False,False,False,False,False
+Susah mau upgrade ke gopay plus nya,neutral,3,negative,0.48012638665179197,neutral predicted negative,False,False,False,False,False,False
+njumumnngumumin iuu,neutral,3,positive,0.6336164148383829,neutral predicted positive,True,False,False,False,False,False
+Mehong,neutral,3,positive,0.6336164148383829,neutral predicted positive,True,False,False,False,False,False
+Sy susah buka aplikasi Gojek ya,positive,5,neutral,0.3523856279238988,positive predicted neutral,False,False,False,False,False,False
+Selalu sebel sama driver di go shop selalu pilih pilih oderan Bahkan banyak alesan bukan sekali dua kali tapi sering kaya gini Terus pelayan mereka lama Pada hal saya pakai go shop untuk keadaan darurat seperti beli obat,neutral,3,negative,0.8149565886089754,neutral predicted negative,False,True,True,False,False,False
+Harganya kok naik ya,negative,1,positive,0.5466270586714196,negative predicted positive,False,False,False,False,False,False
+Rugi banyak gajadi anter tp kepotong gede,negative,1,positive,0.4902124468452826,negative predicted positive,False,True,False,True,False,False
+0 1,negative,1,positive,0.6336164148383829,negative predicted positive,True,False,False,False,False,False
+Kenapa alpikasinya susah dibuka skrg ya,positive,5,neutral,0.8064005178404712,positive predicted neutral,False,False,False,False,False,False
+Gojek  Mengapa riwayat perjalanan saya tidak ada notifikasinya ke email ya,positive,5,negative,0.4465546817186431,positive predicted negative,False,False,True,False,False,False
+mau masuk ke akun gopay sya susah masuk nya tolong di bantu bos buat di proses,neutral,3,negative,0.5632167250994742,neutral predicted negative,False,False,False,False,False,False
+kenapa gaada gotix di aplikasi saya,positive,5,neutral,0.8555336616418306,positive predicted neutral,False,False,False,False,False,False
+Susah bngt nyari driver,neutral,3,negative,0.7463595309430846,neutral predicted negative,False,False,False,False,False,False
+Kok Bis di buka,positive,5,negative,0.5105536305045724,positive predicted negative,False,False,False,False,False,False
+Ganti gmail kok tidak bisa aneh mohon di perbaiki,negative,1,neutral,0.5956321810934604,negative predicted neutral,False,False,True,False,False,False
+Lebih lancar dipembayaran pln pgn kartu halo semoga semakin berkembang pembayaran yang lain tidak hanya tokopedia tapi juga yang lainya,positive,5,negative,0.3695115069978689,positive predicted negative,False,True,True,False,False,False
+Ulasan terbaru   maaf yah  Saya kecewa dgn aplikasi ini begitu setia nya saya beberapa tahun ini tidak ada pertimbangan nya dgn kesetiaan saya  email ga di bls  ga ada respon  saya mengajukan permohonan  sudah saya kecewa sekali gopaylater juga di blokir ya Allah  ulasan lama  Makin mantap kelengkapan nya  Transfortasi  makanan  pembayaran all  transf  pinjaman  Semuanya gampang dalam satu aplikasi  Alhamdulillah saya sudah dalam katagori  JURAGAN,positive,5,negative,0.8751072416089796,positive predicted negative,False,False,True,False,True,False
+Bagus Kadang cancel gk konfimasi,positive,5,neutral,0.4470740964917521,positive predicted neutral,False,False,True,True,False,False
+Program tidak seseru kompetitor,positive,5,negative,0.5664496068600647,positive predicted negative,False,False,True,False,False,False
+Penjemputan tidak lama,positive,5,negative,0.6992490460305257,positive predicted negative,False,False,True,False,False,False
+Ga tau disuruh temen,positive,5,negative,0.5025003329519696,positive predicted negative,False,False,True,False,False,False
+Untuk gopay laternya nggak bisa di bayar lebih awal jadi b2 dulu nanti kalo bisa baru di kasih b5,negative,2,neutral,0.6805457463936969,negative predicted neutral,False,False,True,False,False,False
+Buat Kalian yg suka pakai gopaylater jika update klik saja nanti soalnya klo di update tiba2 terblokir dan gak bisa di pakai lgi  Padahal selama ini sangat membantu dan bayarnya sllu tgl 28 padahal JT tgl 01,negative,1,neutral,0.3802157079437431,negative predicted neutral,False,True,True,False,False,False
+Pelayanannya lambat dan ribetterutama buat gopay plus ga bisa ganti ke no baruga bisa hapus akun dan ganti ke no yang barumenyusahkan sekali proses nya,positive,5,negative,0.5858027373776464,positive predicted negative,False,False,True,False,False,False
+Saya langganan gofood pluss biar gratis ongkir tapi kenapa ada biaya penanganan Sama aja jadinya kena ongkir gimanasih rugi,neutral,3,negative,0.6515455250645176,neutral predicted negative,False,True,False,False,False,False
+Kepada pengembang aplikasi kenapa setelah update saya rasakan vitur menu2nya semakin rumit ya Kalau bisa ketika update kembali menu2 dan vitur dibuat seperti aplikasi yang versi sebelumnya supaya lebih mudah digunakan dan tidak membingungkan,neutral,3,negative,0.4135105794419578,neutral predicted negative,False,False,True,False,False,False
+Cukup bagus sih lumayan ada peningkatan tp disayangkan beberapa driver mempermainkan cust dg alasan tarif terlalu murah halo kita gabisa ngatur ya itu udah dari aplikasi tarifnya kita hanya bisa memilih menggunakan argo apa ride car dll kalau dirasa tarif terlalu murah silahkan lapor ke kantorcs saja jk tdk sesuai keinginan kalian jgn cm nerima order tp ga jalan ujungujungnya dibatalkan sepihak,positive,5,negative,0.5603857901143845,positive predicted negative,False,True,True,True,False,False
+Sering sering ada promo ya Jangn pelanggan yg baru aja d kasih promo banyak Pelanggan lama juga biar ga berpaling dari gofood mantap,positive,5,negative,0.5127612022366099,positive predicted negative,False,False,True,False,False,False
+Gojek saya ga bisa dibuka semejak dipembaharui ke aplikasi gojek versi baru,negative,1,neutral,0.48814271661309355,negative predicted neutral,False,False,True,False,False,False
+Semenjak semenjak hadirnya goto limit paylater tidak bisa di gunakan sy sangat kecewa tidak perna bayar telat di cicilan tapi limit bertamba mau pake transaksi gak bisa di gunain malah di GoJek limit paylater di blokir tolong beri solusi semulanya nya berjalan lancar baik belanja gofood maupun yg lain nya sekarang limit bertambah malah sia sia malah di alihkan gopay apa limit pay later masih di gunain apa UD gak bisa lagi tolong solusinya terima kasih,positive,5,negative,0.5410404219558439,positive predicted negative,False,True,True,False,False,False
+Kak kenapa gopay saya tidak bisa dibuka dan ada terdaftar hp vivo sedangkan hp bukan vivo,positive,4,negative,0.5073181518707224,positive predicted negative,False,False,True,False,False,False
+Emang skrng bisa ambil 2 orderan yg satu arah ya Jadi lama bgt nunggu orderan datang dan skrng jg saya ngerasa nambah lama nympeny entah itu 1 atau 2 orderan pdhl jaraknya deket gofood,positive,4,negative,0.696762728525922,positive predicted negative,False,False,False,False,False,False
+Harusnya biaya aplikasi dihapuskan karena tidak ada manfaatnya buat customer dan driver Hanya menguntungkan untuk perusahaan saja,positive,5,negative,0.6556037338753413,positive predicted negative,False,False,True,False,False,False
+Terus berinofasi,positive,4,negative,0.5151754020052892,positive predicted negative,True,False,False,False,False,False
+Ongkir ny mahal,positive,4,negative,0.5991399812508842,positive predicted negative,False,False,False,False,False,False
+Untuk Driver khususnya roda 2 1coba helm untuk penumpang yang layak pake 2Terus klo hujan coba tawarin mau pake jas hujan Masa jasa driver tidak melengkapi amunisinya  3 Tanya ke penumpang mau berangkat aktifitasburu2gimana kadang ada driver yg jalannya doyok emang mau jalan2  4 klo posisi mau tarik oder penumpang disaranin BBM fullcukup POM bensin suka antri,negative,1,neutral,0.44938038634121175,negative predicted neutral,False,False,True,False,False,False
+Tolong driver ya jgn terlalu banyak potongan y,positive,5,negative,0.4565495576505317,positive predicted negative,False,False,False,False,False,False
+Ini knpa ya ko gbisa masuk trus ada notifikasi integritas dirusak sistem berbahaya dan dapat meretas data pribadi tolong dong Min mamah saya pengen recesss soal nya,negative,1,neutral,0.39125136233401053,negative predicted neutral,False,False,False,False,True,False
+Penyelesaian masalah sangat tidak baik,negative,1,positive,0.45966398849260226,negative predicted positive,False,False,True,False,False,False
+Sering kasih voucher diskon go food,positive,5,neutral,0.37118410535144347,positive predicted neutral,False,False,False,False,False,False
+ok di tingkatkan lg tranportasinya,neutral,3,positive,0.8456814057633272,neutral predicted positive,False,False,False,False,False,False
+Cari driver mobil lama bangett,neutral,3,negative,0.7649625138088364,neutral predicted negative,False,False,False,False,False,False
+lebih ditingkatkan lagi pada pembayaran melalui gopay di otomatiskan gopay ya gopay tunai ya tunai,neutral,3,negative,0.4856995404707306,neutral predicted negative,False,False,False,False,False,False
+Semakin kesini semakin tidak jelasini bukan memperbaiki sistemini marusak sistem dulu gk pernah ada kendala sistemgojek mulai rusak dari tahun 2018sampai sekarang tambah ancurudah pada gk jelas gojek sekarang,positive,5,negative,0.8700379802402606,positive predicted negative,False,False,True,True,False,False
+Gojek ku gk bisa di pakeabis di hapus aplikasi ny download LG gk bisa kebuka,positive,5,negative,0.6851243738166816,positive predicted negative,False,False,True,True,False,False
+Saya pelanggan lama dari bulan lalu paylater diblokir padahal selalu ontime bayar dan katanya ada aktivitas mencurigakan sistemnya error kagak si Tolong admin segera dipulihkanmakasih,positive,5,negative,0.8582097446261446,positive predicted negative,False,True,False,False,False,False
+Kapan gopaylater saya diaktifkan lagi saya sudah bertransaksi terus pake gopay tp kog masih dibekukan saja,negative,2,neutral,0.47158303837076737,negative predicted neutral,False,True,False,True,False,False
+1 Orang yang sign up harus dan wajib verifikasi data dengan KTP Paspor Kartu identitas anak Lalu jangan sampai username seenaknya digonta ganti karena rawan dimanfaatkan order fiktif makanan atau kirim go send yang aneh2 2 Kenapa kalau kita yang cancel order berimbas ke ojolnya juga Padahal customer yg minta cancel Misalnya tiba2 dijemput keluarga Itu kudu dievaluasi banget 3 Sering loading lama untk dapetin driver gocar 4 Sering dapet driver yg jauh Kasiannn buang bensin,positive,5,negative,0.7505067565342187,positive predicted negative,False,True,True,False,True,False
+Luar biasa Muahalll Masak beli bubur harga 18 rb dekat rumah ongkirnye 16 rb  biaya aplikasi 3 rb  biaya siluman lain seribu Aplikasi pencekik anak bangsa Pantas aja sahamnya jeblok terus sejak buka Mending kalo pesen makanan ke GRAB aja Ongkir masuk akal hsrgs makanan jg masuk akal,neutral,3,negative,0.7391582803187406,neutral predicted negative,False,False,False,False,True,False
+agak ngebug aplikasi nya,negative,2,positive,0.44804223255188586,negative predicted positive,False,False,False,False,False,False
+Mau daftar nunggu sms code tapi gak masuk masuk,positive,5,negative,0.7204980324800401,positive predicted negative,False,True,True,False,False,False
+Gk bs buka gojek beberp hari pdhl udh updatesisa saldo hilang dh,positive,4,negative,0.580634671487991,positive predicted negative,False,False,True,True,False,False
+Iiitzhhh Hh ni h hhhhhu,negative,1,positive,0.5778873193866086,negative predicted positive,False,False,False,False,True,False
+Koneknya agak lama,positive,5,neutral,0.6919793247129754,positive predicted neutral,False,False,False,False,False,False
+Gopay laternya tolong dibenerin ya Masa Setiap kali mau bayar tagihan selalu perbaikan Selalu lo itu saya harus nyoba 10x setiap waktu mau pembayaran Tolong perbaiki,positive,4,negative,0.6275937956159028,positive predicted negative,False,False,False,False,False,False
+Aku pesen gojek dan dia ga mau masuk dan jemput tidak sesuaii titik dia nunggu di pinggir jalan Sedangkan titik nya di dalem lmnyan jauh aku blg sesuai titik Dan dia nyolott ah ribett katany yauda kl ga mau ribet saree di imah ulaaah nge gojeekk dia yg cancell rasa nyaa aku pgn ngmng balik ke si mang nya tuh Cuman sayang dia yg cancel jdi gda tuh riwayat nya di saya  Kalau ada udh di laporin tuh,negative,1,neutral,0.4647127969207993,negative predicted neutral,False,False,True,True,True,False
+Menu gopay pinjam saya kok hilang ya,neutral,3,negative,0.5584600104932577,neutral predicted negative,False,False,False,False,False,False
+Untuk go tiket ga ada lagi ya,neutral,3,negative,0.5399272091951638,neutral predicted negative,False,False,True,False,False,False
+Knpa akun gojekku susah ke buka ci,positive,5,negative,0.7251354717218944,positive predicted negative,False,False,False,False,False,False
+Setelah diupdate langsung tidak bisa dibuka aplikasinya,negative,1,neutral,0.5509714243897254,negative predicted neutral,False,False,True,False,False,False
+Saya top up 10K  3x yg masuk saldo cuman 10K doang  gmn ini saldo saya  duit ilang  saldo cmn ke isi 1x,positive,5,negative,0.5863775091245432,positive predicted negative,False,False,False,False,False,False
+ga semua orang bisa bahasa inggris harusnya pake bahasa indonesia sy berulangx instal donlot lg tetap bahasa inggris udh di klik ke indonesia jg tetap inggis lg jadi malas,negative,1,positive,0.4499398940755474,negative predicted positive,False,False,True,True,False,False
+Gopaylater sya ke blokir knp yaa hrs pengaduan kmn,negative,1,neutral,0.395513496496813,negative predicted neutral,False,False,False,False,False,False
+Posisi driver tidak update terkadang di sistem sudah di pick up tapi realnya belum dateng sama sekali itu driver,neutral,3,negative,0.5349571103436913,neutral predicted negative,False,True,True,False,False,False
+Gojek  gofood stabil sampai sekarang,positive,5,negative,0.5054674558171522,positive predicted negative,False,False,False,False,False,False
+Buat saya pribadi gojek adalah apk terbaik Dari beberapa tahun lalu saya pakai apk ini sampai sekarang ga mau ganti meskipun banyak apk lain yg lbih murah bagi saya meski beda sedikit harga tapi tdk masalah karana sesua respon drivernya yg baik gojek tetap yg terbaik,positive,5,neutral,0.35239486753977184,positive predicted neutral,False,True,True,True,False,False
+Sering nemuin kastamor ngoder ny pake tunay udah setenga perjalan ganti pake gopay tampa komformasi lagi sama driver kastamor ny tolong di perbaikin lagi,positive,5,negative,0.5739629815303716,positive predicted negative,False,False,False,False,False,False
+Kalau mau daftar jadi driver lewat mana,positive,5,negative,0.6772620355841622,positive predicted negative,False,False,False,False,False,False
+berubahhh masa bunga paylater dari yg 2 naek ke 295 mantaapp mau cepet naek hajii keknya,negative,2,positive,0.47997750866760835,negative predicted positive,False,False,False,False,True,False
+Mayan,neutral,3,positive,0.7023519633790957,neutral predicted positive,True,False,False,False,False,False
+Kenapa sekarang di gojek gada gotik Padahal memudahkan banget buat nonton bioskop yg gamau antri beli tiket  Tolong dong gojek Adain lagi gotix nya,positive,4,neutral,0.7420017741633385,positive predicted neutral,False,True,False,False,False,False
+Knp update trs padahal baru update 6hr lalu masi d suru updete lg  Kocak dikit gk ngaru kah  Makasi,neutral,3,negative,0.6463371629490506,neutral predicted negative,False,True,True,True,False,False
+Bagus banget tapi mahal ongkir nya,positive,5,neutral,0.4073754389553404,positive predicted neutral,False,True,False,False,False,False
+Woylah yg bener aja tolong perbaikin mapsnya dong udah kesekian kalinya titik alamat ga sesuai padahal di google maps sudah sesuai sampe ribet mau ngirim makannan,neutral,3,negative,0.44093448627988824,neutral predicted negative,False,True,True,False,False,False
+apakah ada biaya tambahan ketika telah memesan GO BOX  saya diminta biaya tambahan untuk biaya angkat barang apakah memang begitu,negative,1,positive,0.38575897428762124,negative predicted positive,False,False,False,False,False,False
+ga ada,positive,5,negative,0.8437734868138512,positive predicted negative,True,False,True,False,False,False
+Tingkatan orderan untuk luar kota apk anak bangsa jgn kalah dengan apk asing,positive,5,negative,0.450984196116015,positive predicted negative,False,False,False,False,False,False
+Mantaff aplikasinya,positive,5,negative,0.5125904528854415,positive predicted negative,True,False,False,False,False,False
+Apl sudah lumaya Cuma kenadala pada driver nya sekarang pada songong2 banget Entar ada orderan banyak milih2 kalau tak ada orderan mengeluh Entah apa mau driver sekarang Ngomong juga kasar lagi huhhhhh,positive,4,negative,0.8303894965200745,positive predicted negative,False,False,True,False,True,False
+Sekarang gojek mahal biaya aplikasinya dan ongkirnya,positive,4,negative,0.5512600925370018,positive predicted negative,False,False,False,False,False,False
+Apakah layanan GoTix sudah tidak ada di Gojeg,neutral,3,negative,0.3702185608941367,neutral predicted negative,False,False,True,False,False,False
+Aku cintaaaa gopay,positive,5,neutral,0.4393999909388788,positive predicted neutral,False,False,False,False,True,False
+Gopaylater susah,negative,2,neutral,0.6099143439080779,negative predicted neutral,True,False,False,False,False,False
+Ehm,negative,2,positive,0.6336164148383829,negative predicted positive,True,False,False,False,False,False
+Driver gosend sering banget ga mau ambil orderan dan sering banget pas ada yg mau ambil wktu dia nyampe malah ngeluh jarak sama bayarannya ga sesuaiya kan bukan aku yg buat aplikasi yg nerima dia yg gabung ke gojek juga mrekakalau ga mau ambil orderan buat apa gabung,neutral,3,negative,0.7133490933091157,neutral predicted negative,False,False,True,False,False,False
+ada bug saya mau masuk aplikasi tapi kepental dan tidak bisa masuk aplikasi TOLONG SEGERA DIPERBAIKI MENYUSAHKAN,neutral,3,negative,0.6790862363774448,neutral predicted negative,False,True,True,False,False,False
+program beta sudah penuh maksudnya apa ya udah nyaman pake gojek tp jadi gak bisa di pakai aplikasinya krn program beta sudah penuh,neutral,3,negative,0.4185101273328209,neutral predicted negative,False,True,True,True,False,False
+Tapi susah untuk dapat titik jemput yg tepat alamat susah diedit,positive,4,neutral,0.8623682123392487,positive predicted neutral,False,True,False,False,False,False
+up terus,positive,5,negative,0.4589007875901963,positive predicted negative,True,False,False,False,False,False
+Pake voucher go food gak ada yang mao nganterin vouchernya hoak,positive,5,negative,0.5559174731159594,positive predicted negative,False,False,True,False,False,False
+gak tau,positive,5,negative,0.42586956857266134,positive predicted negative,True,False,True,False,False,False
+knp aplikasi gojek saya kadang ngak bsa di buka kadang bisa lebih sering ngak bsa di buka,positive,4,negative,0.5190615194017383,positive predicted negative,False,False,False,False,False,False
+PARA CUSTOMER GOJEK TERNYATA ONGKIR GOFOOD MURAHPARA DRIVER GOJEK HANYA MENDAPATKAN ONGKIR 5000 UNTUK DRIVER GOJEK KUSUS DAN UNTUK DOUBLE ORDER JARAK TERDEKAT DRIVER GOJEK HANYA DAPAT 2500 ARTINYA APLIKASI MOTONG ONKIR LEBIH DARI 60,positive,5,negative,0.6074690008599765,positive predicted negative,False,False,False,False,True,False
+Ini kenapa saya sudah mengunakan apk nya sudah lama tapi minta berhenti terus,positive,5,negative,0.5869141763733304,positive predicted negative,False,True,False,False,False,False
+bayar gopaylater nya lama harus nunggu 25 hari,positive,4,negative,0.5535117780121843,positive predicted negative,False,False,False,False,False,False
+Sering dpt voucher hihi lupppp,positive,5,negative,0.4199576562773293,positive predicted negative,False,False,False,False,True,False
+Sulit mendapatkan driver,negative,1,neutral,0.43882751723835617,negative predicted neutral,False,False,False,False,False,False
+Bca oneklik nya kebaca hp baru terus otp kg terkirim2,negative,1,neutral,0.43202137099843047,negative predicted neutral,False,False,False,False,False,False
+Oke Kadang agak delay kembalikan gopay,positive,4,neutral,0.7311166719890365,positive predicted neutral,False,False,False,False,False,False
+sui banget selak ngeleh,negative,1,positive,0.5312952730446683,negative predicted positive,False,False,False,False,False,False
+Ini Napa dah ga bisa masuk jaringan internet tidak stabi padahal jaringan saya full kuota bejibun ribet lu skrg jek padahal saya pengguna setia dari dlu,neutral,3,negative,0.8354759471870529,neutral predicted negative,False,True,True,False,False,False
+gojek kenapa server kalian kok nggak bener sama sekali tolong lah di perbaiki walau perbaikan nya lama tapi yang penting lancar,neutral,3,negative,0.6695125820391951,neutral predicted negative,False,True,True,False,False,False
+Membingungkangopaylater dan gopaypinjamtiba tiba di blok dg alasan telat pembayarankapan telatnya Mksh atas tanggapan bintang saya kembalikan 5 kembali 3 bintang Tidak ada penjelasan penyelesaian pdhl sederhana tinggal jawab saja kenapa di blokir gopaypinjam dan gopaylater nya,neutral,3,negative,0.6885729214112055,neutral predicted negative,False,False,True,False,False,False
+jarang kasih gratis ongkirhanya menguntungkan aplikasi nya saja,negative,1,positive,0.4432632140610375,negative predicted positive,False,False,False,False,False,False
+Cocok ni bintang buat aplikasi yg suka blank,negative,1,positive,0.5081529707330866,negative predicted positive,False,False,False,False,False,False
+TOLONG intruksikan SEMUA Sopir anda untuk MEMAKAI MASKER Ini Covid mulai mengganas lagi dan sudah makan korban jiwa pula,neutral,3,positive,0.5408532425090247,neutral predicted positive,False,False,False,False,False,False
+Sekarang kok ssh cari driver di gojek yaaa,positive,5,negative,0.5454263077714574,positive predicted negative,False,False,False,False,True,False
+Ini mau buat laporan kurang kenapa ngk bisa pilih galeri foto ada di galeri dah beberapa kali dengan berbeda pedagang,neutral,3,negative,0.5202094083201071,neutral predicted negative,False,False,False,False,False,False
+Admiiinnnnnnn bisain lagi dong pulsa dan paket data pake GopayLatter  hikss sedih aku tu udah ga bisa lagiiiiiii,positive,4,negative,0.45591222551675453,positive predicted negative,False,False,True,False,True,False
+Min minta tolong drivernya suruh pake deodoran soalnya udh 2x nemu go car bau ketek bgt mau cancel gak enak kasian Bertahuntahun pake go car baru kali 2x ini dapet yang bau ketek,positive,4,negative,0.5271885018565593,positive predicted negative,False,False,True,True,False,False
+kenapa ya gojek kadang bisa kadang gk apa ada yg pakai aplikasi nya ya,negative,1,neutral,0.3856340633682177,negative predicted neutral,False,False,True,True,False,False
+Menu di GOTIX itu saran saya di kasih menu dan keterangan tiket sudah di tonton dan yang akan datang Selain itu juga menu penilaian agar bisa mengetahui apakah film itu di rekomedasikan atau tidak,positive,5,negative,0.5744157050680497,positive predicted negative,False,False,True,False,False,False
+Ongkir mahal,positive,4,negative,0.5531387732546243,positive predicted negative,True,False,False,False,False,False
+Sepi dari mana2,negative,1,positive,0.4861261725670149,negative predicted positive,False,False,False,False,False,False
+Kenapa sekarang kalau mau pesen susah nya padahal driver yang dekat lokasi penjemputan banyakini malah cari yang jauh dari lokasitolong di perbaiki lagi,neutral,3,negative,0.6691676674931857,neutral predicted negative,False,True,False,False,False,False
+Saya Tidak bisa masuk akun gojeg mohon bantuanya,positive,4,negative,0.5673588557470071,positive predicted negative,False,False,True,False,False,False
+Jarang pakai sih tapi dari 3 kali pakai masih tetap memuaskan,positive,5,neutral,0.4381876890504806,positive predicted neutral,False,True,False,False,False,False
+Aplikasi bagus dan mudah cm masalhnya kl pesen gofood terlalu bnyak biaya ini itu pas check out blm lagi bnyk resto yg ngasih hrg g ngotak Ngasih promo tp hrs pake bank tertentu Ribet,positive,4,negative,0.48284117863870646,positive predicted negative,False,True,True,True,False,False
+Sebenernya sudah bagus sihcuma kemarin ada kendala waktu mau pakai gopaylatertgl 18 des 2023 tagihan sudah lunastapi tgl 19 des 2023 mau transaksi di tokopedia malah gak bisa dipakek katanya coba lagidicoba lagi malah gak ada pilihan gopaylaternya saya coba sampek besoknya juga masih samapilihan gopaylaternya hilang padahal di app limitnya ada dan gak ada keterangan apa2 baru kemarin tgl 23 des 2023 buka gofood baru di situ tau kalo diblokir ini kenapa ya padahal saya gak telat bayar,positive,4,negative,0.8063563177211723,positive predicted negative,False,True,True,False,False,False
+Apk sampah Kenapa fitur gotix nya malah hilang Gimana solusinya,negative,1,neutral,0.6155610792027415,negative predicted neutral,False,False,False,False,False,False
+33Care qmwmana,negative,1,positive,0.6336164148383829,negative predicted positive,True,False,False,False,False,False
+UDAH BAGUS TAPI SAYANG TIDAK BISA KIRIM KE EWALLET LAINNYA SEPERTI DA,neutral,3,positive,0.361231084763032,neutral predicted positive,False,True,True,False,False,False
+Perbaharui alamat koq kga bisa di ketik,negative,1,positive,0.3959525571441684,negative predicted positive,False,False,False,False,False,False
+Sikit promo,negative,1,positive,0.6885063674342873,negative predicted positive,True,False,False,False,False,False
+ya suka aja tapi ongkirnya terlalu mahal tapi tidak apa2,positive,4,negative,0.49675913989880593,positive predicted negative,False,True,True,False,False,False
+Beberapa hari terakhir aplikasi nya eror nunggu driver nya aja lamaaaaaaaaaa bnget,neutral,3,negative,0.7018854472884815,neutral predicted negative,False,False,False,False,True,False
+Selalu pakai dr awal aplikasi nya ada sampai dengan saat ini,positive,5,negative,0.5434417244962544,positive predicted negative,False,False,False,True,False,False
+Beli kuota di gojek g bisa bilangnya aktivitas tidak wajar cara mengatasi gimana aku beli kuota di Tokopedia pake gopay bisa,negative,1,neutral,0.44920378375894837,negative predicted neutral,False,False,True,False,False,False
+Gimana caray lupa pin y bos sdangkan nomer yg buat daftar gopay sudah hilang sma hpy,positive,4,negative,0.4805957451099795,positive predicted negative,False,False,False,False,False,False
+Susah ganti no hp,negative,1,neutral,0.5472545665688329,negative predicted neutral,False,False,False,False,False,False
+Semoga ga sering nge lag,positive,5,negative,0.5289693394879792,positive predicted negative,False,False,True,False,False,False
+SALAM SATU ASPAL  JANGANKAN UNTUK ANAK ISTRI KU DI RUMAH UNTUK DREPERNYA SENDIRI HARUS PUASA  KALAU BEGINI TERUS TERUSAN BISA BISA MATI DREPERMU JEK  12 jam ONLINE CUMA DI KASIH 3 ORDERAN HARUSNYA GOJEK LEBIH CAKAP TENTANG PEM BAGIAN ORDERAN SAYA MENAFKAHI KELUARGA BERGANTUNG SAMA GOJEK  MUDAH MUDAHAN UNTUK KEDEPANNYA GOJEK DAPAT MENINGKATKAN ORDERAN SAYA  SALAM SATU ASPAL,positive,5,negative,0.573906089438652,positive predicted negative,False,False,False,False,False,False
+Buset ulasan saya dihapus apa ya,positive,5,negative,0.41650833970430445,positive predicted negative,False,False,False,False,False,False
+saran jgn kebanyakan biaya lainnya,positive,5,negative,0.4693571068020882,positive predicted negative,False,False,False,False,False,False
+Sulit mendapatkan driver dan banyak masalah lainnya,negative,1,positive,0.4287716091292308,negative predicted positive,False,False,False,False,False,False
+Kok pas saya mesan di kota Tegal belum ada yah,negative,1,neutral,0.5547636363662122,negative predicted neutral,False,False,True,False,False,False
+Sering sekali ngelag Agak mengganggu Tolong diperbaiki,neutral,3,negative,0.45118498530596984,neutral predicted negative,False,False,False,False,False,False
+Kok pay leter saya saldonya TDK bisa dipakai untuk transaksi padahal pembayaran saya bagus,positive,4,negative,0.5091582189684503,positive predicted negative,False,True,True,True,False,False
+Kenapa layanan Gotux gak ada lagi di aplikasi gojek Kalau mau nonton bioskop pesan tiketnya lewat Gotix,positive,5,neutral,0.45172151777899766,positive predicted neutral,False,False,True,False,False,False
+Coba dulu,positive,5,neutral,0.6472162679047456,positive predicted neutral,True,False,False,False,False,False
+mahalllll,negative,1,positive,0.6336164148383829,negative predicted positive,True,False,False,False,True,False
+CARI DRIVER GOCAR SENGSARA  SANGAT SUSAH,negative,1,neutral,0.46142223234821905,negative predicted neutral,False,False,False,False,False,False
+Gini yah wir lau klo modelan mitra gini kalo promo yah abang ojol nya jan dipotong nya pendapatan nya Customer yg repot mesen 30 menit gk dapet akhir nya gk pake promo taeee Buat apa ada promo kalo berat sebelah pantes goto turun mulu sama sebagian aset nya dijual DOA ORANG2 TERSAKITI DIJABAH OLEH Allah swt,neutral,3,negative,0.6556323101836301,neutral predicted negative,False,False,True,True,True,False
+Mau tanya ini kok saya mau bayar pake gopay sidik jari sama pin sudah benar tapi kok tetep ga masuk yah,positive,5,negative,0.45551813252063483,positive predicted negative,False,True,True,False,False,False
+Nyesel kenapa baru sekarang downdload gojek,positive,5,negative,0.5186115131398268,positive predicted negative,False,False,False,False,False,False
+Driver go car distasiun rangkas bitung tidak mau ngambil ordeesdm yang tidak ptofesionallebih baik kalian evaluasi,neutral,3,negative,0.6567344408219281,neutral predicted negative,False,False,True,False,False,False
+Padahal lg butuh bgt  Tp dr pagi g bsa sign up,neutral,3,negative,0.40990110738173374,neutral predicted negative,False,True,False,True,False,False
+Proses Upgrade nyako lama ya,positive,4,negative,0.45669816385975887,positive predicted negative,False,False,False,False,False,False
+Gojek skrg susah banget buat Daftarnya orang perlunya cepet malah jadi telat,negative,1,neutral,0.4090391624720162,negative predicted neutral,False,False,False,False,False,False
+Anjeng,negative,1,positive,0.6336164148383829,negative predicted positive,True,False,False,False,False,False
+Mudahtetapi untuk rubah alamat kirim setelah isi saldo ada pengurangan saldo apakah karena finalty pembtalan,positive,5,negative,0.6540138475751678,positive predicted negative,False,False,False,False,False,False
+Empat dlu aj,positive,4,negative,0.4427443971523002,positive predicted negative,False,False,False,False,False,False
+Aplikasi gojek saya kok gk bisa dibukak mohon dijelaskan ada mslh ap ya,positive,5,neutral,0.42824031464444584,positive predicted neutral,False,False,True,True,False,False
+Lebih,positive,5,neutral,0.44146164121644954,positive predicted neutral,True,False,False,False,False,False
+Saya akan Reting kembali ini aplikasi memang bagus tapi kekurangannya tidak ada fitur mengetahui makanan nya halal atau tidak,positive,4,neutral,0.4927529436983809,positive predicted neutral,False,True,True,False,False,False
+Ini knp yaah mau pesen gojek kluar sendirigak seperti biasax gampang mesen,positive,4,negative,0.5347333312929717,positive predicted negative,False,False,False,False,False,False
+Kadang notifikasi chat dari driver suka lamban munculnya gimana tuh,positive,4,neutral,0.3680135508614109,positive predicted neutral,False,False,False,False,False,False
+Kenapa ya gojek kok belakangan kurang begitu baguscari gocar dan go kek sangat sulit apalagi waktu hujan,positive,5,neutral,0.3568461004618121,positive predicted neutral,False,False,False,False,False,False
+Baik bngty,neutral,3,positive,0.917169440761512,neutral predicted positive,True,False,False,False,False,False
+Paylater yg sekarang payah Dkasih 85jt tpi hnya bisa sekali saja Harus top up gopay dulu,negative,1,neutral,0.5803861352287305,negative predicted neutral,False,False,False,False,False,False
+Gojek nih aplikasi sial Banyak banget ganguannya,negative,1,positive,0.5126861493038553,negative predicted positive,False,False,False,False,False,False
+Titik untuk alamat rumah lari Alamat rumah dimana titik dibuat dimana  Jadinya malas pake appnya,negative,1,positive,0.48941564060675996,negative predicted positive,False,False,False,False,False,False
+n,negative,1,positive,0.6336164148383829,negative predicted positive,True,False,False,False,False,False
+Tidak dapat menentukan secara tepat titik penjemputan,negative,1,neutral,0.6935268413574303,negative predicted neutral,False,False,True,False,False,False
+Turun bintang satu lg Skrg nyaman di sebelah,neutral,3,positive,0.4340976481025059,neutral predicted positive,False,False,False,False,False,False
+Update trs mana gak ada bedanya,positive,4,negative,0.7664176249741471,positive predicted negative,False,False,True,False,False,False
+Masih suka ngelag sama ngebug dan keluar apliaksi sendiri,positive,4,negative,0.5408866325069477,positive predicted negative,False,False,False,False,False,False
+Saya mau nya voucher go ride bukan go food,positive,5,negative,0.4661911671837695,positive predicted negative,False,False,True,False,False,False
+oy ngak bisa dibukak,negative,2,positive,0.47150770934816105,negative predicted positive,False,False,False,False,False,False
+Aku lg orderabang gojegnya udah otw tiba2 tiap klik aplikasinya mau mantau pesenan aku udah dmneh tiba2 muncul update terbaru ini gmn ya kasian babang nya udah otw nganter makanan,neutral,3,negative,0.568744086752391,neutral predicted negative,False,False,False,False,False,False
+Kenapa saya tidak bisa menggunakan gopaylater  Sudah bisa,positive,5,neutral,0.4653387235241573,positive predicted neutral,False,False,True,False,False,False
+Menyusahkan,negative,1,positive,0.5521225195516802,negative predicted positive,True,False,False,False,False,False
+Ini gimana kok ga bisa didownload stuck di 99 terus,positive,5,negative,0.7114675297756164,positive predicted negative,False,False,True,False,False,False
+makin lama promo buat gojek makin dikit padahal dulu banyakk,neutral,3,negative,0.726274136256709,neutral predicted negative,False,True,False,False,False,False
+Sy beri bintang 4 dl karna setiap hujan masih kesulitan mencari drivernya go ride padahal sangat dibutuhkan bahkan kadang ditunggu sampai 2 jam lebih masih belum jg dapat  Untuk sikap ato attitude driver Alhamdulillah kebanyakan bertemu dg yg baik2,positive,4,negative,0.4245039882558988,positive predicted negative,False,True,True,False,False,False
+Susah banget cari gocar di purwakarta woy apa masih sedikit ya,positive,4,negative,0.5370643052295134,positive predicted negative,False,False,False,False,False,False
+Bagus bangetcm pernah salah pesen makanan tpi gabisa dibatalin,positive,4,negative,0.46144145383056984,positive predicted negative,False,False,False,False,False,False
+Aplikasi ny mah ok ok aja tapi kurang suka sama Driver ny setelah Sampai tujuan bukanya pergi malah nongkrong dulu depan rumah ngerokok kan ngg enak bngtt dilihatnya mana sambil duduk diatas motor angkat kaki lagiii udh mah badannya bauuu pas naik motornya juga plat no ny beda yg di aplikasi tolong ditingkatkan lagi untuk kebersihan driver,neutral,3,negative,0.5604216853237051,neutral predicted negative,False,True,False,True,True,False
+Driver nya baikharga masuk akal,positive,5,negative,0.7025714462316411,positive predicted negative,False,False,False,False,False,False
+Gopay pinjm dan gopay later tau tau d blokirpdhl tdk pernh telat bayar,negative,2,neutral,0.495968164462545,negative predicted neutral,False,False,True,True,False,False
+kadang error kadang ngga,positive,5,neutral,0.4626159758982093,positive predicted neutral,False,False,True,True,False,False
+Rian celll 1 Ferna kuota 12k 2bapa memet 25k80 3t dian front vcr 23k 4t atin pulsa 23k 5t sulis vcr 13k 6t reni vcr 20k 7ibu vcr 12WaA,negative,1,positive,0.5261597265830292,negative predicted positive,False,False,False,False,True,False
+Tolong kembalikan gotix,negative,1,neutral,0.6020480464798871,negative predicted neutral,False,False,False,False,False,False
+Makin lama pengiriman makin lambat dan ongkir makin mahalgak sesuai dengan layanan,negative,1,neutral,0.46791937004206746,negative predicted neutral,False,False,False,False,False,False
+Maaf saya mau tanya gopaylater saya kenapa diblokir dan apakah blokir permanen Apakah tagihan saya masih bisa dibayar jika gopaylater nya diblokir Minta tolong gimana caranya bisa tidak diblokir lagi Terimakasih,neutral,3,negative,0.6455214001314612,neutral predicted negative,False,False,True,False,False,False
+Gofoodnya sih oke  tpi go car nya mematikan harga guide di bali,negative,1,positive,0.4710542267692038,negative predicted positive,False,False,False,False,False,False
+Semoga terus memberikan yg terbaik utk pelayanannya,neutral,3,positive,0.8153157097251535,neutral predicted positive,False,False,False,False,False,False
+Sering tidak sesuai titik,negative,1,neutral,0.7135012110626842,negative predicted neutral,False,False,True,False,False,False
+Semakin kesini bukannya lebih baik tapi semakin tidak sopan,negative,1,positive,0.4202306904019555,negative predicted positive,False,True,True,False,False,False
+Kenapa gotix nya gak ada pdahal itu favoritku hmm,negative,1,neutral,0.49658359301866795,negative predicted neutral,False,False,True,False,False,False
+sekedar saransptnya bnyk ojol yg suka kena orderan fiktif baiknya orderan di atas 200rb di bikin sistem auto gopay or ovo or pembayaran lwt credit cardjika service ojol ke costumer hrs baikminimal lindungi jg para drivernya kasihan,positive,5,negative,0.5961370461186738,positive predicted negative,False,False,False,False,False,False
+Kalo gerimis saja tukang ojeg nya pada malas Menyebalkan,negative,1,positive,0.33607856111116546,negative predicted positive,False,False,False,False,False,False
+Tolong diperbaiki diskonnya,neutral,3,positive,0.5098847520654441,neutral predicted positive,False,False,False,False,False,False
+Gak ada penyelesaian ketika ada kekeliruan dalam pemesanan Auto delete gojek,negative,1,positive,0.4410732039830212,negative predicted positive,False,False,True,False,False,False
+sorry tapi waktu untuk dapat driver cukup lama,neutral,3,negative,0.5514706360596355,neutral predicted negative,False,True,False,False,False,False
+Sekarang gfood pelittt promo harus pake bank yg gajelaasss kalo mau promo atau pake paylater kan aneh masa mau makan suruh ngehutang justru pake gopay gada promonya cuma sedikit ga kayak duluuuuu kecewaaa berattttt,negative,1,neutral,0.6113404345121867,negative predicted neutral,False,False,True,False,True,False
+Driver nya mumpuni,positive,5,negative,0.560075775803589,positive predicted negative,False,False,False,False,False,False
+Semakin kesini kenapa makin jelek ya Pesan go car goride suka lama Mencari driver sering di kasih yang jauh dari lokasi jemputan padahal yg dekat lokasi jemputan ada Tolong di perbaiki ya pak Bagusan gojek yg dl deh,positive,4,negative,0.662890970862511,positive predicted negative,False,True,False,False,False,False
+Driver santun,positive,5,negative,0.4324717890958058,positive predicted negative,True,False,False,False,False,False
+Semakin kedepan aplikasinya g smakin bagus malah seribg gangguantukan IT nya beda g kaya pas awal2 gojek hadir,negative,1,positive,0.46725841188258493,negative predicted positive,False,False,False,False,False,False
+Tapi kalo di atas jam 615 rasanya susah cari driver,positive,5,negative,0.6601890697813734,positive predicted negative,False,True,False,False,False,False
+Jangan pernah pesan makana pake gojek saya sangat menyarankan dikarenakan jika kalian pesan makanan andai kata minta refund alias kesalahan resto pihak gojek tidak akan memberikan ganti atau prosesnya tim terkaitnya sangat lama dan tak adil pengalaman saya seperti itu lebih baik pake si orend atau saingan si gojek lebih cepat refund lebih aman dan murah,negative,1,neutral,0.3813200032946273,negative predicted neutral,False,False,True,False,False,False
+Ingin uninstal tp masih punya cicilan,negative,1,positive,0.5136110851975707,negative predicted positive,False,True,False,True,False,False
+gojek terlalu bnyak aplikasi include internal kadang lemot chat driver aplikasi bisa di baca pelanggan 15 20 mnit setelah driver kirim pesa,positive,5,negative,0.586515084744973,positive predicted negative,False,False,False,False,False,False
+aplikasi sering ngelag,positive,5,negative,0.568090059134739,positive predicted negative,False,False,False,False,False,False
+PELIT VOUCHER,negative,1,neutral,0.45299099695951783,negative predicted neutral,True,False,False,False,False,False
+Sy kasih bintang 1  Harusnya juga gojek ride punya gojek hemat setara harga maxim seperti kompetitor hijau sebelah biar orderan kalian makin lancar untuk goride dan gocarnya,negative,1,positive,0.47258330122143405,negative predicted positive,False,False,False,False,False,False
+Sy kecewa dgn Gofood  pada saat ingin batalkan pesenan wkt yg diberikan sangat sedikit  sehingga sy order makanan kemahalan,negative,1,neutral,0.5464671565843975,negative predicted neutral,False,False,False,False,False,False
+Knapa aplikasi gojek gk bsa dibuka,negative,1,neutral,0.37204683677875405,negative predicted neutral,False,False,True,True,False,False
+Sering 2 ada promoatau potongan,positive,5,negative,0.42543548423267546,positive predicted negative,False,False,False,False,False,False
+Kenapa ko susah dibukatadiy lancarlancar aja,negative,1,neutral,0.5692373415915,negative predicted neutral,False,False,False,False,False,False
+Saya pesan gofood reguler bukan hemat Tapi saya dapat driver nya lama banget 1 jam baru dapat driver Pas makanan datang sudah dalam keadaan dingin dan mie nya sudah lembek besar2 seperti cacing Lebih baik sekarang kalo pesan makanan di grab atau shopee saja yg cepet dapat drivernya Gojek semakin lama semakin merugikan pembeli,negative,1,neutral,0.5618571125339977,negative predicted neutral,False,True,True,False,False,False
+Saat ada masalah laporan sama sekali tidak membantu,neutral,3,negative,0.5734234329199671,neutral predicted negative,False,False,True,False,False,False
+Mohon maaf kenapa semakin hari order go food  semakin lamanunggu dapat driver padahal resto sudah konfirmasi orderan begitu saya order mohon tingkatkan pelayanan dong  jangan kalah dengan aplikasi sebelah kalau untuk layanan selain go food gojek dapat diandalkantapi saat saat ini untuk layanan go food maaf penilaian semakin jeleklama mendapatkan driver,neutral,3,negative,0.6433219779557121,neutral predicted negative,False,True,True,False,False,False
+5tc,negative,2,positive,0.6336164148383829,negative predicted positive,True,False,False,False,False,False
+Aplikasinya bagus dan sebenernya nyaman banget pake aplikasi ini Cuma di daerahku gabisa semuanya terjangkau pakai gojek jadi susah kalau mau ke daerah yang ga terjangkau titiknya gojek ini,positive,5,negative,0.40864032606717765,positive predicted negative,False,False,True,False,False,False
+Makin susah untuk komunikasi klarifikasi gndala kami perlu kmu mintpi knapa susah bngettt,negative,2,neutral,0.5653219712997284,negative predicted neutral,False,False,False,False,True,False
+Idiot banget tagihan gopay later udah bener tgl 1 malah di pindahin jd tgl 2 idiotgoblokkk,neutral,3,negative,0.6621359381530089,neutral predicted negative,False,False,False,False,True,False
+Tolong tampil kan promo diskon ku hilang,negative,1,positive,0.4640352488696684,negative predicted positive,False,False,False,False,False,False
+Susah dapet drivernya Gg membantu banget,negative,1,positive,0.4180397595321445,negative predicted positive,False,False,False,False,False,False
+GOSEN Tidak ada pilihan berat 1kg2kg Kan beli barang tidak semua berat max 5kg Mohon di perbaiki,negative,1,neutral,0.6437755671440588,negative predicted neutral,False,False,True,False,False,False
+Pertama kali pkai gojek sangat sangat mengecewakansupirnya dari awal tak ramah Walaupun konsumen salah atau bagaimana ga perlu ngomong ngegas Ga sopan,negative,1,neutral,0.46494867620600283,negative predicted neutral,False,True,True,False,False,False
+Sering error  masih force close terus  udah pesan food  keluar aplikasi baru bisa dilihat pesananya kl yg ga tau pasti dobel order kl bgt,neutral,3,negative,0.8146446021888936,neutral predicted negative,False,False,True,False,False,False
+KETERANGAN REFUND UDAH DI PROSES KAGA ADA SALDO MASUK SALDO 2JT ANGUS GAK ADA INFO DARI PIHAK GOJEKKKKK DI MANA KALO REFUND SALDO KEPOTONG LAH INI SALDO TIBA KEPOTONG SALDO 2JT BELUM KEMBALI DARI KEMARIN,positive,5,negative,0.8755333085870138,positive predicted negative,False,False,True,False,True,False
+Kenapa menu help tidak ada di aplikasi saya ya,neutral,3,negative,0.557384416010957,neutral predicted negative,False,False,True,False,False,False
+Untuk pelanggan yg memakai aplikasi ini Jangan asal ngasih bintang dikarnakan kalian gk tau kodisi abang ojol dilapangan gimna Entah dia blm makan Entah dia mikirin keluarga nya dirumah,positive,5,negative,0.5591183532417706,positive predicted negative,False,False,True,True,False,False
+Dua bintang aja dulu coz tidak bisa gopaylater,negative,2,neutral,0.5337126239295731,negative predicted neutral,False,False,True,False,False,False
+Lamaaa tod,negative,1,positive,0.45497586658998673,negative predicted positive,True,False,False,False,True,False
+Di Kabupaten Nganjuk kapan Hadir GojekGofood Grab Sudah ada Loh di kabupaten Nganjuk Kami tunggu kehadirannya di Kabupaten NganjukJawa Timur Terimakasih,positive,5,negative,0.3775926811467119,positive predicted negative,False,False,False,False,False,False
